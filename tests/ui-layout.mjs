@@ -16,12 +16,13 @@ async function capture(p,name){await settle(p);await p.screenshot({path:join(out
 async function geometry(p,label){const data=await p.eval(()=>{
  const rect=e=>{const r=e.getBoundingClientRect();return {x:r.x,y:r.y,w:r.width,h:r.height,right:r.right,bottom:r.bottom}};
  const cards=[...document.querySelectorAll('#v27Cards .v20-shop-entry,#v27Cards .hand-card')].filter(e=>e.getClientRects().length).map(e=>({box:rect(e),image:rect(e.querySelector('img')),button:rect(e.querySelector('.v38-buy,.v38-play'))}));
- const slots=[...document.querySelectorAll('#v27Arena .unit-slot')].filter(e=>e.getClientRects().length).map(e=>({box:rect(e),image:e.querySelector('img')?rect(e.querySelector('img')):null}));
+ const slots=[...document.querySelectorAll('#v27Arena .unit-slot')].filter(e=>e.getClientRects().length).map(e=>({box:rect(e),card:e.querySelector('.unit-card')?rect(e.querySelector('.unit-card')):null,image:e.querySelector('img')?rect(e.querySelector('img')):null}));
  const controls=[...document.querySelectorAll('#v27Controls button,#v27Controls select,#v27Cards .v20-deck-nav button')].filter(e=>e.getClientRects().length).map(e=>({id:e.id,box:rect(e)}));
  return {viewport:[innerWidth,innerHeight],table:rect(document.getElementById('v27Table')),cards,slots,controls,tabs:[document.getElementById('v20ShopTab').textContent,document.getElementById('v20HandTab').textContent],overflow:document.documentElement.scrollWidth>innerWidth,errors:[]};
  });
  for(const c of data.cards){if(c.box.w>=c.box.h)data.errors.push('Non-portrait card');if(c.image.h<30)data.errors.push('Card art under 30px');if(c.button.bottom>c.box.bottom+1)data.errors.push('Action exceeds card');}
- for(const c of data.slots){if(c.box.w>c.box.h+1)data.errors.push('Non-portrait slot');if(c.image&&c.image.h<24)data.errors.push('Unit art under 24px');}
+ // A slot may also contain a separate adjustment control; measure the playable card itself.
+ for(const c of data.slots){const shape=c.card||c.box;if(shape.w>shape.h+1)data.errors.push('Non-portrait card');if(c.image&&c.image.h<24)data.errors.push('Unit art under 24px');}
  if(data.table.bottom>data.viewport[1])data.errors.push('Table exceeds viewport');
  for(const c of data.controls)if(c.box.bottom>data.viewport[1]+1||c.box.right>data.viewport[0]+1)data.errors.push('Control outside viewport: '+c.id);
  if(!data.tabs[0].includes('招募')||!data.tabs[1].includes('手牌'))data.errors.push('Tab label lost');

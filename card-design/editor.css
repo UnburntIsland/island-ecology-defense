@@ -1,0 +1,18 @@
+/* Keep the editor's legacy media queries from spanning the right panel
+   beneath a sticky left panel. 300px + flexible preview + 260px + 28px gaps. */
+.layout > .panel { min-width: 0; }
+.layout > .right { grid-column: auto; }
+@media (min-width: 1051px) {
+  .layout > .left, .layout > .right {
+    position: sticky;
+    top: calc(var(--editor-toolbar-height, 66px) + 10px);
+    max-height: calc(100vh - var(--editor-toolbar-height, 66px) - 20px);
+    overflow: auto;
+  }
+}
+@media (max-width: 1050px) {
+  .layout > .left, .layout > .right {
+    position: static;
+    max-height: none;
+  }
+}

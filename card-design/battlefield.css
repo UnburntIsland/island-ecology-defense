@@ -1,0 +1,101 @@
+/* V45: the approved illustrated clearing becomes the real play surface.
+   Perspective belongs to the ground beneath the cards, never to their text or hit areas.
+   Desktop: two six-slot ranks above a bounded recruitment rail. Landscape: roster + rail;
+   combat uses the full width for two ranks, with all twelve slots always available. */
+#gameScreen.v39{--v45-ink:#eef5e9;--v45-wood:#14372e;--v45-edge:#658673;background:#102e25!important}
+#gameScreen.v39 .top,#gameScreen.v39 #v26StatusDock{background:#14372e!important;color:#eef5e9!important}
+#gameScreen.v39 .top h1,#gameScreen.v39 .v26-health,#gameScreen.v39 .v26-health span,#gameScreen.v39 #v26StatusDock .small{color:#eef5e9!important}
+#gameScreen.v39 #v27Table,#gameScreen.v39.v29-learning #v27Table,html:has(#v29Scene[open]) #gameScreen.v39.v29-learning #v27Table{left:0!important;right:0!important;top:94px!important;bottom:66px!important}
+#gameScreen.v39 #v27Center,#gameScreen.v39[data-v27-phase=deploy] #v27Center{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:minmax(0,1fr) minmax(310px,42%)!important;gap:0!important}
+#gameScreen.v39 #v27Arena,#gameScreen.v39[data-v27-phase=deploy] #v27Arena{isolation:isolate;border:0!important;border-radius:0!important;padding:16px 7% 24px!important;background-color:#244434!important;background-position:center 54%!important;background-size:cover!important;background-repeat:no-repeat!important;color:var(--v45-ink)}
+#gameScreen.v39 #v27Arena::before{content:'';position:absolute;inset:0;background:rgba(5,25,21,.52);z-index:-2;pointer-events:none}
+#gameScreen.v39 #v27Arena::after{content:'';position:absolute;inset:12% 5% 5%;background:rgba(25,58,38,.38);border:2px solid #9bac7880;border-bottom:12px solid #283e28;border-radius:28px;transform:perspective(1000px) rotateX(18deg);transform-origin:center bottom;box-shadow:0 16px 22px #071c2780;z-index:-1;pointer-events:none}
+#gameScreen.v39 #v27Arena #deploymentView{display:grid!important;grid-template-rows:minmax(0,1fr) minmax(0,1fr)!important;gap:12px!important}
+#gameScreen.v39 #v27Arena #deploymentView.hidden{display:none!important}
+#gameScreen.v39 #v26StatusDock .v24-vital *,#gameScreen.v39 .v20-wordmark,#gameScreen.v39 .v20-wordmark strong,#gameScreen.v39 .v20-tools>summary{color:#eef5e9!important}
+#gameScreen.v39 #v27Arena .unit-slot:not(:has(.unit-card)){border:1px dashed #c0d0ab!important;background:#264c39a8!important;color:#f1f5e5!important}
+#gameScreen.v39 #v27Arena .unit-head .badge{color:#eef5e9!important;background:transparent!important}
+#v45Scout{display:grid;grid-template-rows:25px minmax(0,1fr);gap:5px;min-height:0}
+#v45Scout .v45-scout-head{display:flex;align-items:center;gap:12px;font-size:14px;color:#f1d6d1}
+#v45Scout .v45-scout-head strong{font-size:16px;color:#fff0e8}
+#v45ScoutCards{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;min-height:0;justify-items:center}
+#v45ScoutCards>button,#v45ScoutCards>.v45-unknown{height:100%;width:min(100%,var(--v45-scout-w,115px));min-width:0;min-height:0;padding:0;border:0;background:transparent;border-radius:8px;position:relative;color:#f2e7cb}
+#v45ScoutCards .ec-mini{height:100%;box-shadow:0 4px 0 #241d20,0 7px 12px #071c2760}
+#v45ScoutCards>.v45-unknown{display:grid;place-content:center;gap:8px;text-align:center;background:#3e4f3bd9;border:2px solid #94a48780;box-shadow:0 4px 0 #23382a}
+#v45ScoutCards .v45-unknown span{font-size:28px}#v45ScoutCards .v45-unknown small{font-size:12px}
+#gameScreen.v39 #v27Arena #rosterPanel{grid-row:2;min-height:0}
+#gameScreen.v39 #v27Arena .unit-head{height:25px!important;margin-bottom:5px!important;color:#eef5e9}
+#gameScreen.v39 #v27Arena .unit-head h3{color:#eef5e9!important;font-size:16px!important}
+#gameScreen.v39 #v27Arena .unit-slot,#gameScreen.v39 #v27Arena #rosterBoard .unit-slot{border:0!important;border-radius:8px!important;padding:19px 0 0!important;background:transparent!important}
+#gameScreen.v39 #v27Arena .unit-slot:has(.unit-card){background:transparent!important}
+#gameScreen.v39 #v27Arena #rosterBoard .unit-slot:not(:has(.unit-card)){border:1px dashed #c0d0ab!important;background:#264c39a8!important;color:#f1f5e5!important}
+#gameScreen.v39 #v27Arena .unit-slot>.small{color:#f1f5e5!important;font-size:13px!important}
+#gameScreen.v39 #v27Arena .unit-slot::after{color:#f4f4df!important;background:#193c30;padding:1px 5px;left:5px!important;top:0!important;border-radius:3px;font-size:12px!important}
+#gameScreen.v39 #v27Arena .unit-slot::before{content:'';position:absolute;inset:auto -5% -5px;height:27%;background:#a6b88a38;border:1px solid #c6d0ab80;border-bottom:4px solid #4f6749;transform:perspective(240px) rotateX(35deg);border-radius:6px;z-index:-1;pointer-events:none}
+#gameScreen.v39 #v27Arena .unit-card>.ec-mini{box-shadow:0 4px 0 #0c251c,0 7px 12px #061c2360}
+#gameScreen.v39 #v27Arena .empty-slot{border:1px dashed #c0d0ab!important;border-radius:7px!important;background:#264c39a8!important;color:#f1f5e5!important;font-size:14px!important}
+#gameScreen.v39 #v27Arena .slot-actions summary{background:#edf4e6!important;color:#19392d!important;border:0!important}
+#gameScreen.v39 #v27Arena .slot-actions{top:0!important;right:0!important}
+#gameScreen.v39 #v39ArenaFoot{position:absolute!important;inset:auto 14px 1px!important;max-width:none!important;height:24px!important;min-height:24px!important;justify-content:space-between;margin:0!important;color:#edf4e6}
+#gameScreen.v39 #v39ArenaFoot .fieldline{background:#193c30!important;color:#edf4e6!important;padding:2px 7px!important;border-radius:4px}
+#gameScreen.v39 #v39ArenaFoot .fieldline>b,#gameScreen.v39 #v39ArenaFoot .fieldline>span{color:#edf4e6!important}
+#gameScreen.v39 #v39DetailButton{background:#edf4e6!important;color:#19392d!important;height:24px!important;min-height:24px!important}
+#gameScreen.v39 #v27Cards,#gameScreen.v39[data-v27-phase=deploy] #v27Cards{border:0!important;border-top:4px solid #3b614b!important;border-radius:0!important;background:#e8efe7!important;padding:0 7%!important}
+#gameScreen.v39 #v27Cards .v20-shop-entry,#gameScreen.v39 #v27Cards .hand-card{background:transparent!important;border:0!important;padding:3px 5px 5px!important}
+#gameScreen.v39 #v27Cards .hand-card{padding-top:21px!important}
+#gameScreen.v39 #v27Cards .shop-grid,#gameScreen.v39 #v27Cards .hand{justify-content:center!important;gap:16px!important}
+#gameScreen.v39 #v27Cards[data-v45-overflow=true] .shop-grid,#gameScreen.v39 #v27Cards[data-v45-overflow=true] .hand{justify-content:flex-start!important}
+#gameScreen.v39 #v27Cards .v38-buy,#gameScreen.v39 #v27Cards .v38-play{background:#f7faf1!important;min-height:36px!important;font-size:15px!important}
+#gameScreen.v39 #v27Controls,#gameScreen.v39 #v29Task{background:#e8efe7!important;border-top:1px solid #b1c5b2!important}
+#gameScreen.v39:not([data-v27-phase=deploy]) #v27Center{grid-template-rows:minmax(0,1fr)!important}
+#gameScreen.v39 #v27Arena #combatView .board-panel{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:28px minmax(0,1fr) minmax(0,1fr) 24px!important;gap:12px!important}
+#gameScreen.v39 #v27EnemyHalf,#gameScreen.v39 #v27PlayerHalf{grid-column:1!important;grid-template-rows:26px minmax(0,1fr)!important;gap:5px!important}
+#gameScreen.v39 #v27EnemyHalf{grid-row:2!important}#gameScreen.v39 #v27PlayerHalf{grid-row:3!important}
+#gameScreen.v39 #v27EnemyHalf::before{color:#ffe0da!important;font-size:16px!important}
+#gameScreen.v39 #v27PlayerHalf::before{color:#edf4dc!important;font-size:16px!important}
+#gameScreen.v39 #combatView .units{grid-template-columns:repeat(6,minmax(0,1fr))!important;grid-template-rows:minmax(0,1fr)!important;gap:12px!important}
+#gameScreen.v39 #combatView .fieldline,#gameScreen.v39 #combatCaption{color:#edf4e6!important;background:#193c30c9!important;border-radius:4px}
+#gameScreen.v39 #combatView .fieldline>span{display:inline!important}
+#gameScreen.v39 #combatCaption{grid-column:1!important;grid-row:4!important;justify-self:center;padding:3px 12px!important;font-size:14px!important}
+#gameScreen.v39 #v20CombatSteps{grid-column:1!important;grid-row:1!important;color:#edf4e6!important}
+#gameScreen.v39 #v20CombatSteps span{background:#14372e!important;color:#d8e4cf!important;font-size:14px!important}
+#gameScreen.v39 #v20CombatSteps .active{background:#e8efe7!important;color:#19392d!important}
+#gameScreen.v39 #v27Arena .unit-card .ec-mini .ec-name h3{font-size:clamp(12px,1.2vw,17px)}
+@media(orientation:landscape) and (max-height:840px){
+ #gameScreen.v39 #v27Table,#gameScreen.v39.v29-learning #v27Table,html:has(#v29Scene[open]) #gameScreen.v39.v29-learning #v27Table{top:52px!important;bottom:54px!important;left:0!important;right:0!important}
+ #gameScreen.v39 #v27Center,#gameScreen.v39[data-v27-phase=deploy] #v27Center{grid-template-columns:minmax(0,1fr) minmax(300px,40%)!important;grid-template-rows:minmax(0,1fr)!important}
+ #gameScreen.v39 #v27Arena,#gameScreen.v39[data-v27-phase=deploy] #v27Arena{padding:8px 18px 30px!important}
+ #gameScreen.v39 #v27Arena::after{inset:7% 2% 6%;border-bottom-width:6px;border-radius:14px;transform:perspective(700px) rotateX(12deg)}
+ #gameScreen.v39 #v27Arena #deploymentView{display:flex!important;gap:0!important}
+ #v45Scout{display:none}
+ #gameScreen.v39 #v27Arena #rosterBoard{grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:repeat(2,minmax(0,1fr))!important;gap:5px 12px!important}
+ #gameScreen.v39 #v27Arena .unit-slot,#gameScreen.v39 #v27Arena #rosterBoard .unit-slot{padding:16px 0 0!important}
+ #gameScreen.v39 #v27Arena .unit-head h3{font-size:14px!important}
+ #gameScreen.v39 #v27Arena .unit-card .ec-mini .ec-name h3{font-size:12px;letter-spacing:-.3px}
+ #gameScreen.v39 #v27Cards,#gameScreen.v39[data-v27-phase=deploy] #v27Cards{border-top:0!important;border-left:3px solid #3b614b!important;padding:0 5px!important}
+ #gameScreen.v39 #v27Cards .shop-grid,#gameScreen.v39 #v27Cards .hand{gap:10px!important;justify-content:flex-start!important}
+ #gameScreen.v39 #v39ArenaFoot{left:8px!important;right:8px!important;height:26px!important;min-height:26px!important}
+ #gameScreen.v39:not([data-v27-phase=deploy]) #v27Center{grid-template-columns:minmax(0,1fr)!important}
+ #gameScreen.v39 #v27Arena #combatView .board-panel{grid-template-rows:22px minmax(0,1fr) minmax(0,1fr) 20px!important;gap:5px!important}
+ #gameScreen.v39 #v27EnemyHalf,#gameScreen.v39 #v27PlayerHalf{grid-template-rows:18px minmax(0,1fr)!important;gap:2px!important}
+ #gameScreen.v39 #v27EnemyHalf::before,#gameScreen.v39 #v27PlayerHalf::before{font-size:12px!important}
+ #gameScreen.v39 #combatView .unit-slot{padding:0!important}
+ #gameScreen.v39:not([data-v27-phase=deploy]) #v27Arena{padding-bottom:24px!important}
+ #gameScreen.v39 #combatView .unit-card .ec-mini .ec-name h3{font-size:11px;white-space:nowrap;letter-spacing:-.3px}
+ #gameScreen.v39 #combatView .fieldline{height:18px!important;max-height:18px!important;font-size:11px!important}
+ #gameScreen.v39 #v20CombatSteps span{font-size:12px!important;padding:2px 6px!important}
+ #gameScreen.v39 #combatCaption{font-size:11px!important;padding:2px 8px!important}
+ #v45ScoutCards .ec-mini .ec-name h3{font-size:12px}
+}
+@media(orientation:landscape) and (max-height:840px) and (max-width:740px){
+ #gameScreen.v39 #v27Center,#gameScreen.v39[data-v27-phase=deploy] #v27Center{grid-template-columns:minmax(0,1fr) 300px!important}
+ #gameScreen.v39 #v27Arena,#gameScreen.v39[data-v27-phase=deploy] #v27Arena{padding:6px 10px 30px!important}
+ #gameScreen.v39:not([data-v27-phase=deploy]) #v27Center{grid-template-columns:minmax(0,1fr)!important}
+}
+@media(orientation:portrait) and (max-width:767px){
+ #gameScreen.v39 #v27Table,#gameScreen.v39.v29-learning #v27Table,html:has(#v29Scene[open]) #gameScreen.v39.v29-learning #v27Table{top:124px!important}
+ #gameScreen.v39 #v27Center,#gameScreen.v39[data-v27-phase=deploy] #v27Center{grid-template-rows:minmax(0,1fr) minmax(0,1fr)!important}
+ #v45Scout{display:none}#gameScreen.v39 #v27Arena #deploymentView{display:flex!important}
+ #gameScreen.v39 #v27Arena{padding:12px 10px 32px!important}
+ #gameScreen.v39 #combatView .units{grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-template-rows:repeat(2,minmax(0,1fr))!important}
+}

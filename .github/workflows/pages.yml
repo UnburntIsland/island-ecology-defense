@@ -1,0 +1,47 @@
+name: Publish game and refresh leaderboard
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # Every 5 minutes, offset from the hour. GitHub can delay scheduled jobs.
+    - cron: '2-57/5 * * * *'
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: island-pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    env:
+      EVENT_ENDPOINT: ${{ vars.EVENT_ENDPOINT }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify score service and synchronization contracts
+        run: node --test tests/event-service.test.mjs
+      - name: Build standalone game
+        run: node card-design/build.mjs
+      - name: Fetch sanitized rankings (failure keeps the previous site deployed)
+        run: node scripts/sync-leaderboard.mjs
+      - name: Prepare public files only
+        run: node scripts/prepare-pages.mjs
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

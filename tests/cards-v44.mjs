@@ -1,6 +1,7 @@
 // Bounded card integration checks. No AI loop or full playthrough.
 import {Browser} from 'file:///C:/Users/apple/.codex/skills/design-taste-frontend/scripts/lib/cdp.mjs';
-import {readFileSync,writeFileSync} from 'node:fs';
+import {readFileSync,writeFileSync,mkdirSync} from 'node:fs';
+const out=process.env.CARDS_OUT||'.taste-skill/v44';mkdirSync(out,{recursive:true});
 const report={checks:[],errors:[]};const check=(name,value)=>{report.checks.push({name,...value});if(value.pass===false)throw Error(name+': '+JSON.stringify(value))};
 const old=readFileSync('.taste-skill/v44/index-before.html','utf8'),current=readFileSync('index.html','utf8');
 check('Existing game source preserved verbatim',{pass:current.replace(/<style id="card-design-v44">[\s\S]*?<\/style>\n/,'').replace(/<script id="card-design-code-v44">[\s\S]*?<\/script>\n/,'')===old});
@@ -22,7 +23,7 @@ try{
  check('Collection uses the new renderer',await p.eval(async()=>{
   G.p.field=tutorialCardV24('pf1');G.p.queue=[tutorialCardV24('pa1')];render();showCollection();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));const nodes=[...$('collectionGrid').querySelectorAll('island-card')];const pass=nodes.length===37&&nodes.every(n=>n.shadowRoot?.querySelector('.ec-card'));hideModal('collectionModal');return {pass,count:nodes.length};
  }));
- await p.screenshot({path:'.taste-skill/v44/operations.png',format:'png'});
+ await p.screenshot({path:out+'/operations.png',format:'png'});
  check('Live combat stats retain current health',await p.eval(()=>{
   G.p.board=['p7','p8'].map(id=>mkBoardUnit(tutorialCardV24(id)));tutorialV24={step:5,busy:false};prepareTutorialBattleV24();tutorialV24=null;const u=G.fight.p[0];u.curHp=1;u.atk=9;render();const node=document.querySelector('#playerBoard [data-unit="'+u.uid+'"]');const n=node?.querySelector('[data-v28-stat=hp] b')?.textContent;node?.click();const hp=$('largeCard').shadowRoot.querySelector('[data-v28-stat=hp] b').textContent;closeCardViewer();return {pass:n==='1'&&hp==='1',boardHP:n,viewerHP:hp};
  }));
@@ -33,4 +34,4 @@ try{
  p=await b.newPage({width:844,height:390});await p.goto('file:///C:/Code/island-ecology-defense/index.html');
  check('Single file offline card and story',await p.eval(async()=>{showCollection();await new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));const node=$('collectionGrid').querySelector('island-card');await Promise.all([...node.shadowRoot.querySelectorAll('img')].map(i=>i.decode()));await document.fonts.ready;return {pass:!!node.shadowRoot.querySelector('.ec-card')&&document.fonts.check('16px Huninn')};}));
  report.errors.push(...p.consoleErrors);
-}catch(e){report.errors.push(e.message);process.exitCode=1}finally{await b.close();writeFileSync('.taste-skill/v44/integration.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));process.exit(process.exitCode||0)}
+}catch(e){report.errors.push(e.message);process.exitCode=1}finally{await b.close();writeFileSync(out+'/integration.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));process.exit(process.exitCode||0)}

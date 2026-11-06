@@ -1,0 +1,128 @@
+/* V46: interface only. Print cards and game rules remain unchanged. */
+#gameScreen.v39 #v27Center,#gameScreen.v39[data-v27-phase=deploy] #v27Center{grid-template-rows:minmax(0,1fr) minmax(365px,50%)!important}
+#gameScreen.v39 #v27Arena{padding:8px 5% 26px!important}
+#menuScreen{overflow-x:clip!important}
+#gameScreen.v39 #v27Arena #deploymentView{grid-template-rows:44px minmax(0,1fr)!important;gap:8px!important}
+#v45Scout{position:relative;display:block;overflow:visible;z-index:50}
+#v45Scout .v45-scout-head{height:44px;gap:10px}
+#v46ScoutToggle{margin-left:auto;min-height:44px;padding:7px 12px;background:#e8efe7;color:#19392d;border:0;border-radius:6px;font:inherit;cursor:pointer}
+#v45ScoutCards{display:none}
+#v45Scout[data-v46-open=true] #v45ScoutCards{display:grid;position:absolute;top:44px;left:0;right:0;height:190px;padding:12px;background:#193c30;border:2px solid #658673;border-radius:8px}
+#gameScreen.v39 #v27Arena #rosterBoard .unit-slot{width:100%!important;padding-top:18px!important}
+#gameScreen.v39 #v27Arena #rosterPanel #rosterBoard .unit-card{width:var(--v43-unit-w)!important;height:calc(var(--v43-unit-w)/.716)!important;max-height:100%;margin-left:max(0px,calc((100% - var(--v43-unit-w) - 48px)/2))}
+#gameScreen.v39 #v27Arena #rosterBoard .unit-slot:has(.unit-card)::after{left:max(0px,calc((100% - var(--v43-unit-w) - 48px)/2))!important}
+#gameScreen.v39 #v27Arena #rosterBoard .unit-slot:not(:has(.unit-card)){width:var(--v43-unit-w)!important}
+#gameScreen.v39 #v27Arena .slot-actions{top:28px!important;right:0!important;max-width:none}
+#gameScreen.v39 #v27Arena .slot-actions summary{width:44px!important;height:44px!important;min-height:44px!important;border-radius:6px}
+#gameScreen.v39 #v27Arena .slot-actions[open]{z-index:35!important}
+#gameScreen.v39 #v27Arena .slot-actions[open] summary{margin-left:auto}
+#gameScreen.v39 #v39ArenaFoot{height:22px!important;min-height:22px!important;justify-content:flex-start}
+#gameScreen.v39 #v39DetailButton{height:44px!important;min-height:44px!important;min-width:64px!important;gap:4px!important;padding:6px 9px!important;flex:none}
+#gameScreen.v39 #v27Cards{padding:0 5%!important}
+#gameScreen.v39 #v27Cards .ec-mini .ec-name h3{font-size:16px}
+#gameScreen.v39 #v27Cards .v38-buy,#gameScreen.v39 #v27Cards .v38-play{height:44px!important;min-height:44px!important;gap:4px!important}
+#gameScreen.v39 #v27ShopControls .btn{width:auto!important;min-width:48px!important;gap:4px!important}
+.v46-button-text{font-family:Huninn,'Microsoft JhengHei',sans-serif;font-style:normal;font-size:14px;white-space:nowrap}
+#v41Browse{height:44px!important;min-height:44px!important}
+#v41Browse .btn{height:44px!important;min-height:44px!important;width:44px!important;min-width:44px!important}
+#gameScreen.v39 #v27Controls{gap:12px!important}
+#gameScreen.v39 #v39Prompt{font-size:14px!important;line-height:1.4;min-width:0;flex:1}
+#v46Tactics{display:block;color:#19392d}
+#cardViewer .viewer-dialog{grid-template-rows:48px minmax(0,1fr)!important}
+#cardViewer .viewer-dialog>.actions{background:#f3f5ec!important;border-radius:8px!important;padding:2px!important;gap:4px!important;width:100%!important;justify-content:flex-end!important}
+#cardViewer #viewerFaceLabel{position:relative!important;grid-column:1/-1!important;z-index:5!important;color:#19392d!important;font-family:Huninn,'Microsoft JhengHei',sans-serif!important;max-width:calc(100% - 160px)!important;padding-left:8px!important;pointer-events:none}
+#cardViewer .viewer-dialog .actions .btn:first-child{width:auto!important;min-width:104px!important;gap:5px!important}
+#cardViewer .viewer-dialog .actions .btn:last-child{width:44px!important}
+#v29Scene #v29SpeechText,#v29Scene #v29Speech .v29-speaker{font-family:Huninn,'Microsoft JhengHei',sans-serif!important}
+#contextDrawer .v46-empty-queue{min-height:0!important;height:auto!important;padding:14px!important}
+#contextDrawer .v46-empty-queue #queueBar{min-height:0!important}
+.v46-entry-note{display:block;font:13px/1.5 Huninn,'Microsoft JhengHei',sans-serif;color:#536458;margin-top:7px}
+#v41Browse{position:relative}
+#gameScreen.v39 #v41Browse #v27Merge{position:absolute;inset:0 100px 0 0;width:auto;max-height:44px;margin:0;padding:2px 46px 2px 6px;border:0;box-shadow:none;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:2px;border-radius:4px;z-index:2}
+#gameScreen.v39 #v41Browse #v27Merge.hidden{display:none}
+#gameScreen.v39 #v41Browse #v27MergeTitle{font-size:13px!important;line-height:1.2;margin:0;white-space:nowrap}
+#gameScreen.v39 #v41Browse #v27MergeCaption{font-size:11px!important;line-height:1.2;margin:0;white-space:nowrap}
+#gameScreen.v39 #v41Browse #v27MergeClose{position:absolute;right:0;top:0;width:44px;height:44px}
+#v41Browse:has(#v27Merge:not(.hidden)) #v41BrowseText,#v41Browse:has(#v27Merge:not(.hidden)) #v27LastMerge{visibility:hidden}
+@media(orientation:landscape) and (max-height:840px){
+ #gameScreen.v39 #v27Arena{grid-area:1 / 1 / 2 / 2!important}
+ #gameScreen.v39 #v27Cards{grid-area:1 / 2 / 2 / 3!important}
+ #gameScreen.v39 #v27Arena #rosterBoard .unit-slot{padding-top:0!important}
+ #gameScreen.v39 #v27Arena #rosterBoard .unit-slot:has(.unit-card)::after{left:auto!important;right:0!important;width:44px;text-align:center}
+ #gameScreen.v39 #v27Center,#gameScreen.v39[data-v27-phase=deploy] #v27Center{grid-template-rows:minmax(0,1fr)!important}
+ #gameScreen.v39 #v27Arena{padding:4px 10px 22px!important}
+ #gameScreen.v39 #v27Arena #deploymentView{display:flex!important}
+ #v45Scout{display:none}
+ #gameScreen.v39 #v27Arena #rosterBoard{gap:6px 4px!important}
+ #gameScreen.v39 #v27Arena .unit-card .ec-mini .ec-name h3{white-space:normal;overflow-wrap:anywhere}
+ #gameScreen.v39 #v27Arena .unit-head{height:20px!important;margin-bottom:2px!important}
+ #gameScreen.v39 #v27Arena .slot-actions{top:23px!important}
+ #gameScreen.v39 #v27Cards{padding:0 4px!important}
+ #gameScreen.v39 #v27Cards .v20-deck-nav{height:44px!important;min-height:44px!important;flex-wrap:nowrap!important}
+ #gameScreen.v39 #v27Cards .v20-deck-nav [role=group]>button{padding:2px!important;gap:2px!important}
+ #gameScreen.v39 #v27ShopControls .btn{min-width:44px!important;padding:3px!important;gap:1px!important;flex-direction:column;line-height:1}
+ #gameScreen.v39 #v27ShopControls .v41-icon{display:none}
+ #gameScreen.v39 #v27ShopControls .v46-button-text{font-size:12px}
+ #gameScreen.v39 #v27ShopControls b{font-size:12px}
+ #gameScreen.v39 #v27Cards .ec-mini .ec-name h3{font-size:14px}
+ #gameScreen.v39 #v27Controls{gap:6px!important;padding-left:8px!important;padding-right:8px!important}
+ #gameScreen.v39 #v39Prompt{font-size:12px!important;line-height:1.3}
+ #gameScreen.v39 #v27PhaseControls,#gameScreen.v39 #v27PhaseControls .v20-stage-actions{gap:6px!important}
+ #gameScreen.v39 #v39DetailButton{min-width:58px!important;padding:4px!important}
+ #gameScreen.v39:not([data-v27-phase=deploy]) #v27Arena{padding:2px 10px 2px!important}
+ #gameScreen.v39 #v27Arena #combatView .board-panel{grid-template-rows:18px minmax(0,1fr) minmax(0,1fr)!important;gap:3px!important}
+ #gameScreen.v39 #v27EnemyHalf,#gameScreen.v39 #v27PlayerHalf{grid-template-rows:16px minmax(0,1fr)!important;gap:1px!important}
+ #gameScreen.v39 #combatView .units{gap:5px!important}
+ #gameScreen.v39 #combatView .unit-card .ec-mini .ec-name h3{font-size:12px;letter-spacing:-.4px}
+ /* The full caption is copied to the footer in this layout, so it stays readable. */
+ #gameScreen.v39 #combatCaption{display:none!important}
+ #cardViewer #viewerFaceLabel{max-width:calc(100% - 172px)!important;font-size:12px!important}
+ body:has(#v29Scene[open]) #cardViewer[open]{align-items:flex-end!important;padding:0 12px 8px!important}
+ body:has(#v29Scene[open]) #cardViewer[open] .viewer-dialog{height:calc(100dvh - 56px)!important;grid-template-rows:44px 120px minmax(0,1fr)!important}
+ body:has(#v29Scene[open]) #cardViewer[open] .viewer-card-content,body:has(#v29Scene[open]) #cardViewer[open] #v44Reader{grid-row:3!important}
+ body:has(#cardViewer[open]) #v29Scene #v29Speech{padding-top:8px!important;padding-bottom:8px!important}
+ body:has(#cardViewer[open]) #v29Scene #v29SpeechText{line-height:1.4!important}
+}
+/* Review fixes: keep each card and its action together; reserve space for depth. */
+#gameScreen.v39 #v27Arena #rosterBoard .unit-slot{width:calc(var(--v43-unit-w) + 48px)!important;max-width:100%;justify-self:center}
+#gameScreen.v39 #v27Arena #rosterPanel #rosterBoard .unit-card{margin-left:0!important}
+#gameScreen.v39 #v27Arena #rosterBoard .unit-slot:has(.unit-card)::after{left:0!important}
+#gameScreen.v39 #v27Arena #rosterBoard .unit-slot:not(:has(.unit-card)){width:var(--v43-unit-w)!important;justify-self:center;transform:translateX(-24px)}
+#gameScreen.v39 #v27Arena .unit-slot::before{display:none!important}
+#gameScreen.v39 #v27Arena .slot-actions summary{display:grid;place-items:center;font:12px/1 Huninn,'Microsoft JhengHei',sans-serif!important}
+#gameScreen.v39 #combatView .unit-slot{width:var(--v43-unit-w)!important;height:calc(var(--v43-unit-w)/.716)!important;justify-self:center;align-self:center}
+#gameScreen.v39 #v27Arena:has(#combatView:not(.hidden)) #v39ArenaFoot{display:none!important}
+#gameScreen.v39[data-v47-task=refresh] #refreshButton,#gameScreen.v39[data-v47-task=upgrade] #upgradeButton{display:none!important}
+#gameScreen.v39 #v41Browse #v27LastMerge{position:static!important;inset:auto!important;width:auto!important;min-width:72px!important;padding:4px 8px!important;flex:none}
+#v27LastMerge .v41-icon,#v29Replay .v41-icon{display:none!important}
+#v27LastMerge .v46-button-text{font-size:12px}
+#v29Scene #v29Portrait,#v29Scene[data-v31-side=true] #v29Portrait{width:120px!important;left:calc(var(--v42-speech-x,16px) + 8px)!important;object-position:center center!important}
+#v29Scene #v29Speech,#v29Scene[data-v31-side=true] #v29Speech{padding-left:140px!important}
+@media(orientation:landscape) and (max-height:840px){
+ #v29Scene #v29Portrait,#v29Scene[data-v31-side=true] #v29Portrait{width:100px!important}
+ #gameScreen.v39 #v27Arena #rosterBoard .unit-slot:has(.unit-card)::after{left:auto!important;right:0!important;width:44px;text-align:center}
+ #v29Scene #v29Speech,#v29Scene[data-v31-side=true] #v29Speech{padding-left:116px!important}
+ body:has(#cardViewer[open]) #v29Scene #v29Portrait{width:64px!important}
+ body:has(#cardViewer[open]) #v29Scene #v29Speech{padding-left:82px!important}
+}
+@media(orientation:landscape) and (max-height:840px) and (max-width:740px){
+ #gameScreen.v39 #v27Center,#gameScreen.v39[data-v27-phase=deploy] #v27Center{grid-template-columns:minmax(0,1fr) 250px!important}
+ #gameScreen.v39 #v27Cards .v20-deck-nav [role=group] .v41-icon{display:none}
+ #gameScreen.v39 #v41Browse #v27Merge{right:0!important}
+ #v41Browse:has(#v27Merge:not(.hidden))>#v41BrowseLeft,#v41Browse:has(#v27Merge:not(.hidden))>#v41BrowseRight{visibility:hidden}
+ #gameScreen.v39 #v27Arena{padding-left:5px!important;padding-right:5px!important}
+ #gameScreen.v39:not([data-v27-phase=deploy]) #v27Center{grid-template-columns:minmax(0,1fr)!important}
+ #gameScreen.v39 #v27MoneyHome{gap:4px!important;min-width:74px}
+ #gameScreen.v39 #v27MoneyHome span{font-size:11px!important}
+ #gameScreen.v39 #battleButton{min-width:112px!important;padding:6px!important}
+}
+/* Mid-height landscape retains the two-line status bar, with a side-by-side table. */
+@media(orientation:landscape) and (min-height:601px) and (max-height:840px){
+ #gameScreen.v39 #v27Table,#gameScreen.v39.v29-learning #v27Table,html:has(#v29Scene[open]) #gameScreen.v39.v29-learning #v27Table{top:94px!important;bottom:66px!important}
+ body:has(#v29Scene[open]) #cardViewer[open] .viewer-dialog{grid-template-rows:44px 152px minmax(0,1fr)!important}
+ #gameScreen.v39 #v27Cards .shop-card{flex:0 0 auto!important;height:calc((var(--v41-card-w) - 10px)/.716 + 22px)!important;max-height:none!important}
+ #gameScreen.v39 #v27Cards .v38-hand-face{flex:0 0 auto!important;height:calc((var(--v41-card-w) - 10px)/.716)!important;max-height:none!important}
+ #gameScreen.v39 #v27Cards .ec-mini{flex:0 0 auto!important;height:calc((var(--v41-card-w) - 10px)/.716)!important;aspect-ratio:63/88}
+ #gameScreen.v39 #v27Cards .v20-shop-entry,#gameScreen.v39 #v27Cards .hand-card{justify-content:center}
+ #gameScreen.v39 #v27Cards .v20-empty-shop{max-height:calc(var(--v41-card-w)/.716 + 74px)!important;align-self:center}
+}

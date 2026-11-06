@@ -1,0 +1,9 @@
+{
+  "eventId": "island-science-2026",
+  "eventTitle": "淮德島守護者排行榜",
+  "endpoint": "https://script.google.com/macros/s/AKfycbxl6x_9eEAOw1LT7Gdp_S2tk9UUjE7XnK8oALuS7X8AGNwwkJF2TiyNz65Um-nkXtw/exec",
+  "leaderboardUrl": "leaderboard.json",
+  "playUrl": "https://unburntisland.github.io/island-ecology-defense/",
+  "feedbackUrl": "https://docs.google.com/forms/d/e/1FAIpQLSdjhzBPpGvZlkXA6_dTAQFIOujAeNLp-Opdkeu5waYvBo_d5w/viewform",
+  "gameVersion": "V47-event-1"
+}

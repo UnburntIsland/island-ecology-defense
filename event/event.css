@@ -1,0 +1,58 @@
+/* Event surfaces inherit the approved paper, green ink and Huninn face. */
+#eventHome {width:100%;max-width:1280px;margin:0 auto 24px;padding:24px 0;border-top:1px solid #ced7ca;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(240px,.7fr);gap:32px;color:#173e36}
+.event-heading {display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+#eventHome h2,.event-dialog h2 {font-size:24px;line-height:1.35;margin:0 0 8px}
+.event-note {font-size:14px!important;line-height:1.6;color:#526453;margin:8px 0;overflow-wrap:anywhere}
+.event-table {width:100%;border-collapse:collapse;table-layout:fixed;font-size:15px}
+.event-table th,.event-table td {padding:10px 6px;text-align:left;border-bottom:1px solid #dce2d6;overflow-wrap:anywhere;vertical-align:middle}
+.event-table th {font-size:13px;color:#526453;font-weight:400}
+.event-table th:first-child,.event-table td:first-child {width:54px}
+.event-table th:last-child,.event-table td:last-child {width:92px;text-align:right;font-variant-numeric:tabular-nums}
+.event-table td:last-child {font-weight:700}
+.event-table small {display:block;color:#526453;font-size:12px;line-height:1.5}
+.event-actions {display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.event-actions .btn,#eventHome .btn,.event-dialog .btn {min-height:44px;white-space:normal;line-height:1.4}
+.event-dialog {width:min(680px,calc(100vw - 24px))!important;max-height:calc(100dvh - 24px)!important;overflow:auto!important;padding:24px!important;color:#173e36;background:#f8f9f2}
+.event-dialog label {display:block;line-height:1.6;margin-top:12px}
+.event-dialog input[type=text] {display:block;width:100%;min-height:44px;padding:10px;border:1px solid #8eaa96;border-radius:6px;font:inherit;color:inherit;background:#fff}
+.event-dialog .event-consent {display:flex;align-items:flex-start;gap:10px;font-size:14px}
+.event-consent input {flex:none;width:20px;height:20px;margin-top:3px}
+.event-status {padding:12px;background:#eaf0e4;color:#244f3d;border-radius:6px;line-height:1.6;overflow-wrap:anywhere}
+.event-status:empty {display:none}
+.event-status[data-error=true] {background:#fff1de;color:#74451d}
+.event-feedback {border-top:1px solid #ced7ca;padding-top:16px;margin-top:16px}
+.event-feedback h3 {font-size:18px;margin:0 0 8px}
+.event-qr {display:grid;grid-template-columns:192px minmax(0,1fr);gap:20px;align-items:center;margin:16px 0}
+.event-qr svg {width:192px;height:192px;max-width:100%;background:white;display:block}
+.event-dialog a {overflow-wrap:anywhere}
+.event-pending {list-style:none;padding:0;margin:0}
+.event-pending li {padding:12px 0;border-bottom:1px solid #ced7ca}
+.event-pending strong {overflow-wrap:anywhere}
+#eventResult {text-align:left}
+#eventResult .event-note {margin-bottom:0}
+#eventResultScore {font-size:20px;font-variant-numeric:tabular-nums}
+/* At desktop size the first rankings belong in the initial viewport. The
+ * compact cover keeps both original animal portraits and the play actions. */
+@media(min-width:1000px) and (min-height:650px){
+ #menuScreen .menu-panel {padding:20px 0!important;gap:32px}
+ #menuScreen .menu-panel h1 {font-size:56px!important;line-height:1.1;margin:12px 0!important}
+ #menuScreen .v20-hero-actions {margin:16px 0!important}
+ #menuScreen .v20-game-facts {margin:16px 0!important}
+ #menuScreen .menu-art.v20-scene {height:350px!important}
+ #menuScreen .v20-portrait.bird {width:170px;top:22px;left:10%}
+ #menuScreen .v20-portrait.cat {width:190px;top:86px;left:45%}
+ #menuScreen .v20-portrait img {height:165px}
+ #menuScreen .v20-portrait.cat img {height:185px}
+ #menuScreen .v20-scene-stamp {width:76px;height:76px;top:0;right:0}
+ #menuScreen .v20-scene-label {top:-6px}
+}
+@media(max-width:700px){
+ #eventHome {grid-template-columns:minmax(0,1fr);gap:20px;padding-top:20px}
+ .event-dialog {padding:16px!important}
+ .event-qr {grid-template-columns:minmax(0,1fr)}
+ .event-qr svg {margin:auto}
+}
+@media(max-height:500px) and (orientation:landscape){
+ .event-qr {grid-template-columns:168px minmax(0,1fr);gap:16px}
+ .event-qr svg {width:168px;height:168px}
+}

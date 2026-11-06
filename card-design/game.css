@@ -11,7 +11,7 @@ body,button,input,select,textarea{font-family:Huninn,'Microsoft JhengHei',sans-s
 #v44Reader{display:none;font-family:Huninn,'Microsoft JhengHei',sans-serif;line-height:1.6;color:#19392d;text-align:left}
 #v44Reader h3{font-size:25px;margin:0 0 3px}#v44Reader p{font-size:18px;margin:12px 0}#v44Reader .v44-reader-kind{font-size:13px;margin:0 0 18px;color:#536458}#v44Reader .v44-keyword{font-size:14px}
 #cardViewer #viewerFaceLabel{color:#19392d!important}
-@media(orientation:landscape) and (max-height:600px){
+@media(orientation:landscape) and (max-height:840px){
  #cardViewer .viewer-dialog,#cardViewer:has(#v24Guide) .viewer-dialog{width:min(740px,calc(100vw - 24px))!important;height:calc(100dvh - 20px)!important;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)!important;grid-template-rows:44px minmax(0,1fr)!important;gap:6px 24px!important;padding:8px 16px!important}
  #cardViewer .viewer-dialog>.viewer-toolbar,#cardViewer .viewer-dialog>.actions{grid-column:1/-1}
  #cardViewer .viewer-dialog,#cardViewer:has(#v24Guide) .viewer-dialog{background:#f3f5ec!important;border-radius:12px!important;color:#19392d!important}
@@ -27,7 +27,7 @@ body,button,input,select,textarea{font-family:Huninn,'Microsoft JhengHei',sans-s
  #gameScreen.v39 #v27Arena .unit-card .ec-mini .ec-stat .icon{width:9px;height:9px}
  #gameScreen.v39 #v27Arena .unit-card .ec-mini .ec-footer{height:13px;font-size:8px}
 }
-@media(orientation:landscape) and (max-height:600px) and (max-width:740px){
+@media(orientation:landscape) and (max-height:840px) and (max-width:740px){
  #gameScreen.v39 #v27Arena,#gameScreen.v39[data-v27-phase=deploy] #v27Arena{padding:6px!important}
  #gameScreen.v39 #v27Cards .ec-mini .ec-ribbon{padding:3px}
  #gameScreen.v39 #v27Cards .ec-mini .ec-stats{margin-top:2px}

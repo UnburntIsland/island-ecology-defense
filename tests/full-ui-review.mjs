@@ -26,6 +26,7 @@ async function shot(p,name){
   if(arrow&&visible(arrow)){
    const r=arrow.getBoundingClientRect();
    if(r.left<0||r.top<0||r.right>innerWidth+1||r.bottom>innerHeight+1)problems.push({type:'coach-arrow-outside-viewport',x:r.x,y:r.y,w:r.width,h:r.height});
+   const browse=$('v41Browse');if(browse?.getClientRects().length){const t=browse.getBoundingClientRect();if(r.left<t.right&&r.right>t.left&&r.top<t.bottom&&r.bottom>t.top)problems.push({type:'coach-covers-browse-help'})}
   }
   const speech=$('v29Scene')?.open?$('v29Speech').getBoundingClientRect():null;
   const overlap=speech?protectedTargetsV46().map(r=>Math.max(0,Math.min(speech.right,r.right)-Math.max(speech.left,r.left))*Math.max(0,Math.min(speech.bottom,r.bottom)-Math.max(speech.top,r.top))):[];

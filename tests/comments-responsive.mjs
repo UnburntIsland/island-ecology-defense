@@ -20,7 +20,8 @@ try{
     const shopIssues=[...document.querySelectorAll('#v27Cards .ec-mini')].filter(n=>n.getClientRects().length).filter(n=>{const z=n.getBoundingClientRect(),button=n.closest('.v20-shop-entry,.hand-card')?.querySelector('.v38-buy,.v38-play')?.getBoundingClientRect();return z.top<pane.top-1||z.bottom>pane.bottom+1||(button&&z.bottom>button.top+1)||(innerWidth>innerHeight&&innerHeight>600&&innerHeight<=840&&Math.abs(z.width/z.height-.716)>.025)}).length;
     const arrow=$('v30Arrow'),a=arrow.getBoundingClientRect(),arrowVisible=arrow.getClientRects().length&&!arrow.hidden&&!$('v30Cues').hidden;
     const arrowClipped=!!arrowVisible&&(a.left<0||a.top<0||a.right>innerWidth+1||a.bottom>innerHeight+1);
-    const arrowOverlap=arrowVisible?protectedTargetsV46().concat($('v29Scene').open?[r]:[]).some(t=>a.left<t.right&&a.right>t.left&&a.top<t.bottom&&a.bottom>t.top):false;
+    const browse=$('v41Browse'),browseRects=browse?.getClientRects().length?[browse.getBoundingClientRect()]:[];
+    const arrowOverlap=arrowVisible?protectedTargetsV46().concat($('v29Scene').open?[r]:[],browseRects).some(t=>a.left<t.right&&a.right>t.left&&a.top<t.bottom&&a.bottom>t.top):false;
     return {step:tutorialV24.step,speech:{x:r.x,y:r.y,w:r.width,h:r.height},textOverflow,cardIssues,shopIssues,overlap,arrowClipped,arrowOverlap,portraitWidth:portrait.width,pass:!arrowClipped&&!arrowOverlap&&!textOverflow&&!cardIssues&&!shopIssues&&overlap.every(x=>x<1)&&r.x>=0&&r.y>=0&&r.right<=innerWidth+1&&r.bottom<=innerHeight+1};
    });report.checks.push({width,height,...check});console.log(width,height,step,check.pass,check.textOverflow,check.cardIssues,check.overlap);
    await p.screenshot({path:`${out}/${width}-${height}-${step}.png`,format:'png'});

@@ -6353,12 +6353,15 @@ positionCoachV30=function(){
  if(!m||!arrow||arrow.hidden||$('v30Cues').hidden)return;
  const face=coachFaceV31(m.primary);if(!face)return;const r=face.getBoundingClientRect(),targets=protectedTargetsV46();
  if($('v29Scene').open)targets.push($('v29Speech').getBoundingClientRect());
+ const browse=$('v41Browse'),browseRect=browse?.getClientRects().length?browse.getBoundingClientRect():null;
+ if(browseRect)targets.push(browseRect);
  // Horizontal and vertical arrows have different flex geometry. Measure after
  // changing direction; measuring the previous direction can clip the label.
  for(const width of [180,140,110])for(const side of ['left','right','above','below']){
   arrow.style.maxWidth=width+'px';arrow.dataset.side=side;
   const a=arrow.getBoundingClientRect(),w=a.width,h=a.height;
   const p=side==='left'?{x:r.left-w-8,y:r.top+(r.height-h)/2}:side==='right'?{x:r.right+8,y:r.top+(r.height-h)/2}:side==='above'?{x:r.left+(r.width-w)/2,y:(targets[0]?.top??r.top)-h-8}:{x:r.left+(r.width-w)/2,y:(targets[0]?.bottom??r.bottom)+8};
+  if(side==='below'&&browseRect&&p.x<browseRect.right&&p.x+w>browseRect.left&&p.y<browseRect.bottom&&p.y+h>browseRect.top)p.y=browseRect.bottom+4;
   if(p.x>=4&&p.x+w<=innerWidth-4&&p.y>=44&&p.y+h<=innerHeight-4&&!targets.some(t=>p.x<t.right&&p.x+w>t.left&&p.y<t.bottom&&p.y+h>t.top)){
    positionOverlayV41(arrow,p.x,p.y);return;
   }

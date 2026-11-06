@@ -43,7 +43,9 @@ node scripts/sync-leaderboard.mjs
 4. 將分支合併／推送至 `main`。第一次也可至 Actions 手動執行 **Publish game and refresh leaderboard**。
 5. 確認工作流程成功，開啟 <https://unburntisland.github.io/island-ecology-defense/>。
 
-工作流程每五分鐘排程、推送或手動觸發時執行：後端合約測試 → 建置單檔 → 讀取整理好的排行榜 → 僅打包 `index.html`、`leaderboard.json`、`.nojekyll` → 部署 Pages。它不抓 Google Form HTML、不發布原始 Sheet、不需要將 Google 或 GitHub 存取憑證放進前端，也不需要把每次更新提交成 Git commit。
+工作流程每五分鐘排程、推送或手動觸發時執行：後端合約測試 → 建置單檔 → 讀取整理好的排行榜 → 打包載入頁 `index.html`、原始單檔 `standalone.html`、以內容雜湊命名的 `_game/` 分段檔、`leaderboard.json`、`.nojekyll` → 部署 Pages。它不抓 Google Form HTML、不發布原始 Sheet、不需要將 Google 或 GitHub 存取憑證放進前端，也不需要把每次更新提交成 Git commit。
+
+載入頁顯示實際下載進度，六個連線下載並驗證每段及完整檔案的 SHA-256，全部完成後才開啟遊戲。失敗時可繼續下載已驗證部分之外的內容。夜間測試網路下，首次載入約 94～129 秒；完整插畫與字型約 29.2 MiB，請勿把頁面出現誤認為遊戲已載完。遊戲內匯出的 HTML 仍可獨立離線遊玩。
 
 Google 回應失敗／資料格式錯誤時，工作流程失敗並保留上一份已部署網站。不要設定 `continue-on-error` 後又發布空榜。未設定 endpoint 的排程會失敗提醒設定；初次手動／推送則可發布僅本機模式。
 

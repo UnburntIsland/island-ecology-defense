@@ -101,10 +101,18 @@ positionCoachV30=function(){
  if(!m||!arrow||arrow.hidden||$('v30Cues').hidden)return;
  const face=coachFaceV31(m.primary);if(!face)return;const r=face.getBoundingClientRect(),targets=protectedTargetsV46();
  if($('v29Scene').open)targets.push($('v29Speech').getBoundingClientRect());
- const a=arrow.getBoundingClientRect(),w=a.width,h=a.height;
- const options=[{x:r.left-w-8,y:r.top+(r.height-h)/2,side:'left'},{x:r.right+8,y:r.top+(r.height-h)/2,side:'right'},{x:r.left+(r.width-w)/2,y:(targets[0]?.top??r.top)-h-8,side:'above'},{x:r.left+(r.width-w)/2,y:(targets[0]?.bottom??r.bottom)+8,side:'below'}];
- const valid=options.find(p=>p.x>=4&&p.x+w<=innerWidth-4&&p.y>=44&&p.y+h<=innerHeight-4&&!targets.some(t=>p.x<t.right&&p.x+w>t.left&&p.y<t.bottom&&p.y+h>t.top));
- if(valid){arrow.dataset.side=valid.side;positionOverlayV41(arrow,valid.x,valid.y)}
+ // Horizontal and vertical arrows have different flex geometry. Measure after
+ // changing direction; measuring the previous direction can clip the label.
+ for(const width of [180,140,110])for(const side of ['left','right','above','below']){
+  arrow.style.maxWidth=width+'px';arrow.dataset.side=side;
+  const a=arrow.getBoundingClientRect(),w=a.width,h=a.height;
+  const p=side==='left'?{x:r.left-w-8,y:r.top+(r.height-h)/2}:side==='right'?{x:r.right+8,y:r.top+(r.height-h)/2}:side==='above'?{x:r.left+(r.width-w)/2,y:(targets[0]?.top??r.top)-h-8}:{x:r.left+(r.width-w)/2,y:(targets[0]?.bottom??r.bottom)+8};
+  if(p.x>=4&&p.x+w<=innerWidth-4&&p.y>=44&&p.y+h<=innerHeight-4&&!targets.some(t=>p.x<t.right&&p.x+w>t.left&&p.y<t.bottom&&p.y+h>t.top)){
+   positionOverlayV41(arrow,p.x,p.y);return;
+  }
+ }
+ // Preserve the original coach placement when no non-overlapping option fits.
+ coachBeforeV46();
 };
 const modalBeforeV46=showModal;
 showModal=function(id){

@@ -6,8 +6,9 @@ try{
  const p=await b.newPage({width:1160,height:520});await p.goto('http://127.0.0.1:8765/');
  for(const [width,height]of [[1160,520],[667,375],[740,390],[741,390],[844,390],[1024,600],[1024,601],[1160,760],[1160,761],[1160,840],[1160,841],[1191,818],[1440,900],[1920,1080],[768,1024]]){
   await p.setViewport({width,height});
-  for(const step of [1,4,11,23,29]){
+  for(const step of [1,3,4,11,23,29]){
    await p.eval(step=>{startGuidedTutorialV24();G.p.board=['p2','p1','p6'].map(id=>mkBoardUnit(tutorialCardV24(id)));G.p.hand=[{...tutorialCardV24('p1'),star:2,handId:NEXT_ID++}];if(step===29){tutorialV24.step=28;prepareTutorialBattleV24()}dialogueStepV29=null;setTutorialStepV24(step);},step);
+   if(step===3)await p.eval(()=>{G.p.board=[];G.p.hand=['p2','p1'].map(id=>({...tutorialCardV24(id),handId:NEXT_ID++}));render();syncCoachV30()});
    await new Promise(r=>setTimeout(r,350));
    const check=await p.eval(()=>{
     const r=$('v29Speech').getBoundingClientRect(),txt=$('v29SpeechText'),portrait=$('v29Portrait').getBoundingClientRect();
@@ -17,7 +18,10 @@ try{
     const cardIssues=cards.filter(n=>{const z=n.getBoundingClientRect(),h=n.querySelector('h3');return z.width>=z.height||z.bottom>$('v27Arena').getBoundingClientRect().bottom+1||(h&&h.scrollWidth>h.clientWidth+2)}).length;
     const pane=$('v27Cards').getBoundingClientRect();
     const shopIssues=[...document.querySelectorAll('#v27Cards .ec-mini')].filter(n=>n.getClientRects().length).filter(n=>{const z=n.getBoundingClientRect(),button=n.closest('.v20-shop-entry,.hand-card')?.querySelector('.v38-buy,.v38-play')?.getBoundingClientRect();return z.top<pane.top-1||z.bottom>pane.bottom+1||(button&&z.bottom>button.top+1)||(innerWidth>innerHeight&&innerHeight>600&&innerHeight<=840&&Math.abs(z.width/z.height-.716)>.025)}).length;
-    return {step:tutorialV24.step,speech:{x:r.x,y:r.y,w:r.width,h:r.height},textOverflow,cardIssues,shopIssues,overlap,portraitWidth:portrait.width,pass:!textOverflow&&!cardIssues&&!shopIssues&&overlap.every(x=>x<1)&&r.x>=0&&r.y>=0&&r.right<=innerWidth+1&&r.bottom<=innerHeight+1};
+    const arrow=$('v30Arrow'),a=arrow.getBoundingClientRect(),arrowVisible=arrow.getClientRects().length&&!arrow.hidden&&!$('v30Cues').hidden;
+    const arrowClipped=!!arrowVisible&&(a.left<0||a.top<0||a.right>innerWidth+1||a.bottom>innerHeight+1);
+    const arrowOverlap=arrowVisible?protectedTargetsV46().concat($('v29Scene').open?[r]:[]).some(t=>a.left<t.right&&a.right>t.left&&a.top<t.bottom&&a.bottom>t.top):false;
+    return {step:tutorialV24.step,speech:{x:r.x,y:r.y,w:r.width,h:r.height},textOverflow,cardIssues,shopIssues,overlap,arrowClipped,arrowOverlap,portraitWidth:portrait.width,pass:!arrowClipped&&!arrowOverlap&&!textOverflow&&!cardIssues&&!shopIssues&&overlap.every(x=>x<1)&&r.x>=0&&r.y>=0&&r.right<=innerWidth+1&&r.bottom<=innerHeight+1};
    });report.checks.push({width,height,...check});console.log(width,height,step,check.pass,check.textOverflow,check.cardIssues,check.overlap);
    await p.screenshot({path:`${out}/${width}-${height}-${step}.png`,format:'png'});
   }

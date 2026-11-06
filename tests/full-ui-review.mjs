@@ -22,6 +22,11 @@ async function shot(p,name){
    if(n.scrollWidth>n.clientWidth+3&&getComputedStyle(n).overflowX!=='auto')problems.push({type:'horizontal-content',id:n.id,text:n.textContent.trim().slice(0,70),w:r.width,scroll:n.scrollWidth});
    if(n.id==='v29SpeechText'&&n.scrollHeight>n.clientHeight+3)problems.push({type:'speech-overflow',h:n.clientHeight,scroll:n.scrollHeight});
   }
+  const arrow=$('v30Arrow');
+  if(arrow&&visible(arrow)){
+   const r=arrow.getBoundingClientRect();
+   if(r.left<0||r.top<0||r.right>innerWidth+1||r.bottom>innerHeight+1)problems.push({type:'coach-arrow-outside-viewport',x:r.x,y:r.y,w:r.width,h:r.height});
+  }
   const speech=$('v29Scene')?.open?$('v29Speech').getBoundingClientRect():null;
   const overlap=speech?protectedTargetsV46().map(r=>Math.max(0,Math.min(speech.right,r.right)-Math.max(speech.left,r.left))*Math.max(0,Math.min(speech.bottom,r.bottom)-Math.max(speech.top,r.top))):[];
   return{problems,overlap,bodyOverflow:document.documentElement.scrollWidth>innerWidth+2,step:tutorialV24?.step,page:dialoguePageV29};

@@ -1,7 +1,8 @@
 // Bounded source and deterministic engine comparison. No browser or full playthrough.
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 const {execFileSync}=require('node:child_process'),{createHash}=require('node:crypto'),Module=require('node:module');
-const revision=process.argv[2]||'origin/main';
+// Pin the original pre-redesign remote; origin/main advances after deployment.
+const revision=process.argv[2]||'5fa62d0';
 const commit=execFileSync('git',['rev-parse',revision],{encoding:'utf8'}).trim();
 const remote=execFileSync('git',['show',commit+':index.html'],{encoding:'utf8',maxBuffer:32*1024*1024});
 const current=fs.readFileSync('index.html','utf8');

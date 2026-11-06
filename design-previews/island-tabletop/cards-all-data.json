@@ -1,0 +1,854 @@
+[
+  {
+    "id": "p1",
+    "name": "台灣水韭",
+    "icon": "🌱",
+    "cost": 2,
+    "atk": 1,
+    "hp": 2,
+    "faction": "native",
+    "bioClass": "plant",
+    "text": "閃亮登場：我方島嶼生命 +1。",
+    "effect": "enterHeal",
+    "type": "unit",
+    "variants": [
+      {
+        "star": 1,
+        "atk": 1,
+        "hp": 2,
+        "text": "閃亮登場：我方島嶼生命 +1。"
+      },
+      {
+        "star": 2,
+        "atk": 2,
+        "hp": 4,
+        "text": "閃亮登場：我方島嶼生命 +2。"
+      },
+      {
+        "star": 4,
+        "atk": 4,
+        "hp": 8,
+        "text": "閃亮登場：我方島嶼生命 +4。"
+      }
+    ]
+  },
+  {
+    "id": "p2",
+    "name": "台灣百合",
+    "icon": "🌸",
+    "cost": 2,
+    "atk": 1,
+    "hp": 3,
+    "faction": "native",
+    "bioClass": "plant",
+    "text": "光環：若有其他原生動物類單位存活，攻擊 +1。",
+    "effect": "lily",
+    "type": "unit",
+    "variants": [
+      {
+        "star": 1,
+        "atk": 1,
+        "hp": 3,
+        "text": "光環：若有其他原生動物類單位存活，攻擊 +1。"
+      },
+      {
+        "star": 2,
+        "atk": 2,
+        "hp": 6,
+        "text": "光環：若有其他原生動物類單位存活，攻擊 +2。"
+      },
+      {
+        "star": 4,
+        "atk": 4,
+        "hp": 12,
+        "text": "光環：若有其他原生動物類單位存活，攻擊 +4。"
+      }
+    ]
+  },
+  {
+    "id": "p3",
+    "name": "台灣紅檜",
+    "icon": "🌲",
+    "cost": 3,
+    "atk": 1,
+    "hp": 4,
+    "faction": "native",
+    "bioClass": "plant",
+    "text": "突襲：其他我方單位生命 +1。",
+    "effect": "cypress",
+    "type": "unit",
+    "variants": [
+      {
+        "star": 1,
+        "atk": 1,
+        "hp": 4,
+        "text": "突襲：其他我方單位生命 +1。"
+      },
+      {
+        "star": 2,
+        "atk": 2,
+        "hp": 8,
+        "text": "突襲：其他我方單位生命 +2。"
+      },
+      {
+        "star": 4,
+        "atk": 4,
+        "hp": 16,
+        "text": "突襲：其他我方單位生命 +4。"
+      }
+    ]
+  },
+  {
+    "id": "p4",
+    "name": "諸羅樹蛙",
+    "icon": "🐸",
+    "cost": 2,
+    "atk": 2,
+    "hp": 1,
+    "faction": "native",
+    "bioClass": "amphibian",
+    "text": "突襲：若有植物存活，自身生命 +1。",
+    "effect": "frog",
+    "type": "unit",
+    "variants": [
+      {
+        "star": 1,
+        "atk": 2,
+        "hp": 1,
+        "text": "突襲：若有植物存活，自身生命 +1。"
+      },
+      {
+        "star": 2,
+        "atk": 4,
+        "hp": 2,
+        "text": "突襲：若有植物存活，自身生命 +2。"
+      },
+      {
+        "star": 4,
+        "atk": 8,
+        "hp": 4,
+        "text": "突襲：若有植物存活，自身生命 +4。"
+      }
+    ]
+  },
+  {
+    "id": "p5",
+    "name": "穿山甲",
+    "icon": "🦔",
+    "cost": 3,
+    "atk": 1,
+    "hp": 4,
+    "faction": "native",
+    "bioClass": "mammal",
+    "text": "守護",
+    "effect": "guard",
+    "type": "unit",
+    "variants": [
+      {
+        "star": 1,
+        "atk": 1,
+        "hp": 4,
+        "text": "守護"
+      },
+      {
+        "star": 2,
+        "atk": 2,
+        "hp": 8,
+        "text": "守護，堅忍"
+      },
+      {
+        "star": 4,
+        "atk": 4,
+        "hp": 16,
+        "text": "守護，堅忍，強化反擊"
+      }
+    ]
+  },
+  {
+    "id": "p6",
+    "name": "台灣野山羊",
+    "icon": "🐐",
+    "cost": 3,
+    "atk": 2,
+    "hp": 3,
+    "faction": "native",
+    "bioClass": "mammal",
+    "text": "格檔：1",
+    "effect": "tough",
+    "type": "unit",
+    "variants": [
+      {
+        "star": 1,
+        "atk": 2,
+        "hp": 3,
+        "text": "格檔：1"
+      },
+      {
+        "star": 2,
+        "atk": 4,
+        "hp": 6,
+        "text": "格檔：2"
+      },
+      {
+        "star": 4,
+        "atk": 8,
+        "hp": 12,
+        "text": "格檔：4"
+      }
+    ]
+  },
+  {
+    "id": "p7",
+    "name": "台灣藍鵲",
+    "icon": "🐦",
+    "cost": 3,
+    "atk": 2,
+    "hp": 2,
+    "faction": "native",
+    "bioClass": "bird",
+    "text": "突襲：右側相鄰我方單位攻擊、生命各 +1。",
+    "effect": "magpie",
+    "type": "unit",
+    "variants": [
+      {
+        "star": 1,
+        "atk": 2,
+        "hp": 2,
+        "text": "突襲：右側相鄰我方單位攻擊、生命各 +1。"
+      },
+      {
+        "star": 2,
+        "atk": 4,
+        "hp": 4,
+        "text": "突襲：右側相鄰我方單位攻擊、生命各 +2。"
+      },
+      {
+        "star": 4,
+        "atk": 8,
+        "hp": 8,
+        "text": "突襲：右側相鄰我方單位攻擊、生命各 +4。"
+      }
+    ]
+  },
+  {
+    "id": "p8",
+    "name": "石虎",
+    "icon": "🐱",
+    "cost": 3,
+    "atk": 3,
+    "hp": 2,
+    "faction": "native",
+    "bioClass": "mammal",
+    "text": "潛伏：1",
+    "effect": "ambush",
+    "type": "unit",
+    "variants": [
+      {
+        "star": 1,
+        "atk": 3,
+        "hp": 2,
+        "text": "潛伏：1"
+      },
+      {
+        "star": 2,
+        "atk": 6,
+        "hp": 4,
+        "text": "潛伏：2"
+      },
+      {
+        "star": 4,
+        "atk": 12,
+        "hp": 8,
+        "text": "潛伏：4"
+      }
+    ]
+  },
+  {
+    "id": "p9",
+    "name": "鳳頭蒼鷹",
+    "icon": "🦅",
+    "cost": 4,
+    "atk": 3,
+    "hp": 3,
+    "faction": "native",
+    "bioClass": "bird",
+    "text": "凱旋：1",
+    "effect": "goshawk",
+    "type": "unit",
+    "variants": [
+      {
+        "star": 1,
+        "atk": 3,
+        "hp": 3,
+        "text": "凱旋：1"
+      },
+      {
+        "star": 2,
+        "atk": 6,
+        "hp": 6,
+        "text": "凱旋：2"
+      },
+      {
+        "star": 4,
+        "atk": 12,
+        "hp": 12,
+        "text": "凱旋：4"
+      }
+    ]
+  },
+  {
+    "id": "p10",
+    "name": "台灣黑熊",
+    "icon": "🐻",
+    "cost": 4,
+    "atk": 2,
+    "hp": 5,
+    "faction": "native",
+    "bioClass": "mammal",
+    "text": "守護",
+    "effect": "guard",
+    "type": "unit",
+    "variants": [
+      {
+        "star": 1,
+        "atk": 2,
+        "hp": 5,
+        "text": "守護"
+      },
+      {
+        "star": 2,
+        "atk": 4,
+        "hp": 10,
+        "text": "守護，堅忍"
+      },
+      {
+        "star": 4,
+        "atk": 8,
+        "hp": 20,
+        "text": "守護，堅忍，強化反擊"
+      }
+    ]
+  },
+  {
+    "id": "pa1",
+    "name": "人工移除",
+    "icon": "🧤",
+    "cost": 2,
+    "faction": "native",
+    "text": "戰鬥開始時，對敵方最左側單位造成 2 點傷害。",
+    "effect": "manual",
+    "type": "action",
+    "variants": []
+  },
+  {
+    "id": "pa2",
+    "name": "棲地修復",
+    "icon": "🌱",
+    "cost": 2,
+    "faction": "native",
+    "text": "戰鬥開始時，所有我方單位生命 +1。",
+    "effect": "restore",
+    "type": "action",
+    "variants": []
+  },
+  {
+    "id": "pa3",
+    "name": "監測與通報",
+    "icon": "🔭",
+    "cost": 2,
+    "faction": "native",
+    "text": "戰鬥開始時，暈眩敵方最左側單位，並減少一半攻擊力。",
+    "effect": "monitor",
+    "type": "action",
+    "variants": []
+  },
+  {
+    "id": "pa4",
+    "name": "精準防治",
+    "icon": "🎯",
+    "cost": 3,
+    "faction": "native",
+    "text": "戰鬥開始時，對生命最低的敵方單位造成 3 點傷害。",
+    "effect": "precise",
+    "type": "action",
+    "variants": []
+  },
+  {
+    "id": "pa5",
+    "name": "緊急廣域處置",
+    "icon": "⚠️",
+    "cost": 4,
+    "faction": "native",
+    "text": "戰鬥開始時，所有敵方單位受到 2 點傷害，所有我方單位受到 1 點傷害。",
+    "effect": "broad",
+    "type": "action",
+    "variants": []
+  },
+  {
+    "id": "pf1",
+    "name": "生態廊道",
+    "icon": "🌳",
+    "cost": 3,
+    "faction": "native",
+    "text": "每回合戰鬥開始時，最左側最多兩名我方單位生命 +2。",
+    "effect": "corridor",
+    "type": "field",
+    "variants": []
+  },
+  {
+    "id": "pf2",
+    "name": "完整食物網",
+    "icon": "🔗",
+    "cost": 4,
+    "faction": "native",
+    "text": "戰鬥中，若我方有植物及兩種不同動物類群存活，所有我方單位攻擊 +1。",
+    "effect": "foodweb",
+    "type": "field",
+    "variants": []
+  },
+  {
+    "id": "a1",
+    "name": "紅火蟻",
+    "icon": "🐜",
+    "cost": 2,
+    "atk": 2,
+    "hp": 1,
+    "faction": "invader",
+    "bioClass": "insect",
+    "text": "突襲：對敵方最左側單位造成 1 點傷害。",
+    "effect": "ant",
+    "type": "unit",
+    "variants": [
+      {
+        "star": 1,
+        "atk": 2,
+        "hp": 1,
+        "text": "突襲：對敵方最左側單位造成 1 點傷害。"
+      },
+      {
+        "star": 2,
+        "atk": 4,
+        "hp": 2,
+        "text": "突襲：對敵方最左側單位造成 2 點傷害。"
+      },
+      {
+        "star": 4,
+        "atk": 8,
+        "hp": 4,
+        "text": "突襲：對敵方最左側單位造成 4 點傷害。"
+      }
+    ]
+  },
+  {
+    "id": "a2",
+    "name": "福壽螺",
+    "icon": "🐌",
+    "cost": 2,
+    "atk": 1,
+    "hp": 2,
+    "faction": "invader",
+    "bioClass": "mollusk",
+    "text": "亡語：召喚一隻暫時 1/1 幼體，具有生長。",
+    "effect": "snail",
+    "type": "unit",
+    "variants": [
+      {
+        "star": 1,
+        "atk": 1,
+        "hp": 2,
+        "text": "亡語：召喚一隻暫時 1/1 幼體，具有生長。"
+      },
+      {
+        "star": 2,
+        "atk": 2,
+        "hp": 4,
+        "text": "亡語：召喚一隻暫時 2/2 幼體，具有生長。"
+      },
+      {
+        "star": 4,
+        "atk": 4,
+        "hp": 8,
+        "text": "亡語：召喚一隻暫時 4/4 幼體，具有生長。"
+      }
+    ]
+  },
+  {
+    "id": "a3",
+    "name": "斑腿樹蛙",
+    "icon": "🐸",
+    "cost": 2,
+    "atk": 1,
+    "hp": 2,
+    "faction": "invader",
+    "bioClass": "amphibian",
+    "text": "光環：若有其他外來種單位存活，攻擊 +1。",
+    "effect": "spotfrog",
+    "type": "unit",
+    "variants": [
+      {
+        "star": 1,
+        "atk": 1,
+        "hp": 2,
+        "text": "光環：若有其他外來種單位存活，攻擊 +1。"
+      },
+      {
+        "star": 2,
+        "atk": 2,
+        "hp": 4,
+        "text": "光環：若有其他外來種單位存活，攻擊 +2。"
+      },
+      {
+        "star": 4,
+        "atk": 4,
+        "hp": 8,
+        "text": "光環：若有其他外來種單位存活，攻擊 +4。"
+      }
+    ]
+  },
+  {
+    "id": "a4",
+    "name": "小花蔓澤蘭",
+    "icon": "🌿",
+    "cost": 2,
+    "atk": 1,
+    "hp": 2,
+    "faction": "invader",
+    "bioClass": "plant",
+    "text": "亡語：召喚一株暫時 1/1 蔓藤，具有生長。",
+    "effect": "vine",
+    "type": "unit",
+    "variants": [
+      {
+        "star": 1,
+        "atk": 1,
+        "hp": 2,
+        "text": "亡語：召喚一株暫時 1/1 蔓藤，具有生長。"
+      },
+      {
+        "star": 2,
+        "atk": 2,
+        "hp": 4,
+        "text": "亡語：召喚一株暫時 2/2 蔓藤，具有生長。"
+      },
+      {
+        "star": 4,
+        "atk": 4,
+        "hp": 8,
+        "text": "亡語：召喚一株暫時 4/4 蔓藤，具有生長。"
+      }
+    ]
+  },
+  {
+    "id": "a5",
+    "name": "銀合歡",
+    "icon": "🌳",
+    "cost": 3,
+    "atk": 2,
+    "hp": 3,
+    "faction": "invader",
+    "bioClass": "plant",
+    "text": "光環：敵方原生植物單位攻擊 -1，最低為 0；同效果採最高值。",
+    "effect": "wattle",
+    "type": "unit",
+    "variants": [
+      {
+        "star": 1,
+        "atk": 2,
+        "hp": 3,
+        "text": "光環：敵方原生植物單位攻擊 -1，最低為 0；同效果採最高值。"
+      },
+      {
+        "star": 2,
+        "atk": 4,
+        "hp": 6,
+        "text": "光環：敵方原生植物單位攻擊 -2，最低為 0；同效果採最高值。"
+      },
+      {
+        "star": 4,
+        "atk": 8,
+        "hp": 12,
+        "text": "光環：敵方原生植物單位攻擊 -4，最低為 0；同效果採最高值。"
+      }
+    ]
+  },
+  {
+    "id": "a6",
+    "name": "綠鬣蜥",
+    "icon": "🦎",
+    "cost": 3,
+    "atk": 3,
+    "hp": 2,
+    "faction": "invader",
+    "bioClass": "reptile",
+    "text": "潛伏：1",
+    "effect": "ambush",
+    "type": "unit",
+    "variants": [
+      {
+        "star": 1,
+        "atk": 3,
+        "hp": 2,
+        "text": "潛伏：1"
+      },
+      {
+        "star": 2,
+        "atk": 6,
+        "hp": 4,
+        "text": "潛伏：2"
+      },
+      {
+        "star": 4,
+        "atk": 12,
+        "hp": 8,
+        "text": "潛伏：4"
+      }
+    ]
+  },
+  {
+    "id": "a7",
+    "name": "紅耳龜",
+    "icon": "🐢",
+    "cost": 3,
+    "atk": 2,
+    "hp": 4,
+    "faction": "invader",
+    "bioClass": "reptile",
+    "text": "格檔：1",
+    "effect": "tough",
+    "type": "unit",
+    "variants": [
+      {
+        "star": 1,
+        "atk": 2,
+        "hp": 4,
+        "text": "格檔：1"
+      },
+      {
+        "star": 2,
+        "atk": 4,
+        "hp": 8,
+        "text": "格檔：2"
+      },
+      {
+        "star": 4,
+        "atk": 8,
+        "hp": 16,
+        "text": "格檔：4"
+      }
+    ]
+  },
+  {
+    "id": "a8",
+    "name": "琵琶鼠",
+    "icon": "🐟",
+    "cost": 3,
+    "atk": 2,
+    "hp": 3,
+    "faction": "invader",
+    "bioClass": "fish",
+    "text": "屹立：攻擊 +1。",
+    "effect": "pleco",
+    "type": "unit",
+    "variants": [
+      {
+        "star": 1,
+        "atk": 2,
+        "hp": 3,
+        "text": "屹立：攻擊 +1。"
+      },
+      {
+        "star": 2,
+        "atk": 4,
+        "hp": 6,
+        "text": "屹立：攻擊 +2。"
+      },
+      {
+        "star": 4,
+        "atk": 8,
+        "hp": 12,
+        "text": "屹立：攻擊 +4。"
+      }
+    ]
+  },
+  {
+    "id": "a9",
+    "name": "埃及聖䴉",
+    "icon": "🕊️",
+    "cost": 4,
+    "atk": 3,
+    "hp": 3,
+    "faction": "invader",
+    "bioClass": "bird",
+    "text": "突襲：對最多 2 名不同隨機敵方單位各造成 1 點傷害。",
+    "effect": "ibis",
+    "type": "unit",
+    "variants": [
+      {
+        "star": 1,
+        "atk": 3,
+        "hp": 3,
+        "text": "突襲：對最多 2 名不同隨機敵方單位各造成 1 點傷害。"
+      },
+      {
+        "star": 2,
+        "atk": 6,
+        "hp": 6,
+        "text": "突襲：對最多 2 名不同隨機敵方單位各造成 2 點傷害。"
+      },
+      {
+        "star": 4,
+        "atk": 12,
+        "hp": 12,
+        "text": "突襲：對最多 2 名不同隨機敵方單位各造成 4 點傷害。"
+      }
+    ]
+  },
+  {
+    "id": "a10",
+    "name": "非洲大蝸牛",
+    "icon": "🐌",
+    "cost": 4,
+    "atk": 2,
+    "hp": 5,
+    "faction": "invader",
+    "bioClass": "mollusk",
+    "text": "守護",
+    "effect": "guard",
+    "type": "unit",
+    "variants": [
+      {
+        "star": 1,
+        "atk": 2,
+        "hp": 5,
+        "text": "守護"
+      },
+      {
+        "star": 2,
+        "atk": 4,
+        "hp": 10,
+        "text": "守護，堅忍"
+      },
+      {
+        "star": 4,
+        "atk": 8,
+        "hp": 20,
+        "text": "守護，堅忍，強化反擊"
+      }
+    ]
+  },
+  {
+    "id": "aa1",
+    "name": "貨運夾帶",
+    "icon": "📦",
+    "cost": 2,
+    "faction": "invader",
+    "text": "打出的當回合，商店中的所有外來種單位卡價格 -1，最低為 0；不累加。",
+    "effect": "freight",
+    "type": "action",
+    "variants": []
+  },
+  {
+    "id": "aa2",
+    "name": "棄養與放生",
+    "icon": "🐢",
+    "cost": 2,
+    "faction": "invader",
+    "text": "戰鬥開始時，召喚一隻暫時 1/1 幼體，具有生長。",
+    "effect": "release",
+    "type": "action",
+    "variants": []
+  },
+  {
+    "id": "aa3",
+    "name": "族群爆發",
+    "icon": "🐣",
+    "cost": 3,
+    "faction": "invader",
+    "text": "本輪戰鬥，所有我方外來種單位攻擊 +1。",
+    "effect": "outbreak",
+    "type": "action",
+    "variants": []
+  },
+  {
+    "id": "aa4",
+    "name": "棲地擾動",
+    "icon": "🏗️",
+    "cost": 3,
+    "faction": "invader",
+    "text": "戰鬥開始時，所有敵方原生單位受到 1 點傷害。",
+    "effect": "disturb",
+    "type": "action",
+    "variants": []
+  },
+  {
+    "id": "aa5",
+    "name": "快速繁殖",
+    "icon": "🌿",
+    "cost": 4,
+    "faction": "invader",
+    "text": "戰鬥開始時，召喚一隻暫時 1/1 幼體，具有生長，重複兩次。每次若已滿場，改為最右側我方單位攻擊、生命各 +1。",
+    "effect": "breed",
+    "type": "action",
+    "variants": []
+  },
+  {
+    "id": "af1",
+    "name": "擾動棲地",
+    "icon": "🏗️",
+    "cost": 3,
+    "faction": "invader",
+    "text": "每回合戰鬥開始時，最左側最多兩名我方外來種單位生命 +2。",
+    "effect": "disturbed",
+    "type": "field",
+    "variants": []
+  },
+  {
+    "id": "af2",
+    "name": "適生環境",
+    "icon": "☀️",
+    "cost": 4,
+    "faction": "invader",
+    "text": "戰鬥中，基礎攻擊為 1 的我方外來種單位攻擊 +1。",
+    "effect": "suitable",
+    "type": "field",
+    "variants": []
+  },
+  {
+    "id": "divine",
+    "name": "自然之母的餽贈",
+    "icon": "✨",
+    "type": "auto",
+    "text": "佈署時施放；戰鬥開始時，對隨機一名敵方單位造成 1 點傷害。",
+    "variants": []
+  },
+  {
+    "id": "token_larva",
+    "name": "幼體",
+    "icon": "🐣",
+    "type": "unit",
+    "faction": "invader",
+    "category": "衍生單位",
+    "star": 0,
+    "cost": 0,
+    "atk": 1,
+    "hp": 1,
+    "effect": "growth",
+    "text": "生長",
+    "variants": []
+  },
+  {
+    "id": "token_vine",
+    "name": "蔓藤",
+    "icon": "🌱",
+    "type": "unit",
+    "faction": "invader",
+    "category": "衍生單位",
+    "star": 0,
+    "cost": 0,
+    "atk": 1,
+    "hp": 1,
+    "effect": "growth",
+    "text": "生長",
+    "variants": []
+  }
+]

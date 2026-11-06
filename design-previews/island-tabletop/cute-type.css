@@ -1,0 +1,4 @@
+@font-face{font-family:'Huninn';src:url('assets/fonts/jf-openhuninn-2.1.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+:root{--child-font:'Huninn','Microsoft JhengHei',sans-serif}
+html,body,button,input,select,textarea,.flip-button{font-family:var(--child-font)!important;font-synthesis:weight}
+.collectible{font-synthesis:weight}

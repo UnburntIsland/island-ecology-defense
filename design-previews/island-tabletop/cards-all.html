@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>淮德島｜全套森林收藏卡</title>
+<link rel="stylesheet" href="cards-v4.css"><link rel="stylesheet" href="cards-v5.css"><link rel="stylesheet" href="cute-type.css"><link rel="stylesheet" href="cards-v6.css"><link rel="stylesheet" href="cards-v7.css"><link rel="stylesheet" href="cards-v8.css"><link rel="stylesheet" href="cards-v10.css"><link rel="stylesheet" href="cards-v11.css"><link rel="stylesheet" href="cards-all.css"></head>
+<body>
+<header class="page-header"><div><h1>淮德島 · 全套森林收藏卡</h1><p>20 張物種、10 張行動、4 張場地，還有餽贈與 2 張衍生單位。</p></div><nav class="page-links" aria-label="設計預覽"><a href="index.html">戰場預覽</a><a href="cards-v11.html">已確認的樣式</a><a href="#catalog">瀏覽全套</a></nav></header>
+<main>
+<section class="collection-controls" aria-label="選擇卡牌">
+ <div class="filter-row"><label>分類<select id="category"><option value="all">全部卡牌</option><option value="native">原生物種</option><option value="invader">外來物種</option><option value="action">行動卡</option><option value="field">場地卡</option><option value="special">餽贈與衍生</option></select></label><label class="search-label">找卡片<input type="search" id="search" placeholder="輸入卡名或類群" autocomplete="off"></label><label>配色<select id="palette"><option value="green">全套森林綠</option><option value="types">依類型配色</option></select></label><output id="result-count" aria-live="polite"></output></div>
+ <div class="selection-row"><button id="previous" aria-label="上一張卡牌">←</button><label class="card-select-label"><span class="sr-only">目前卡牌</span><select id="card-select"></select></label><button id="next" aria-label="下一張卡牌">→</button><div class="star-picker" role="group" aria-label="單位星等"><span>星等</span><button data-star="1" aria-pressed="true">1 星</button><button data-star="2" aria-pressed="false">2 星</button><button data-star="4" aria-pressed="false">4 星</button></div></div>
+<div id="palette-legend" class="palette-legend" hidden><span style="--swatch:#41634b">原生物種</span><span style="--swatch:#884547">外來物種／衍生</span><span style="--swatch:#805c30">行動卡</span><span style="--swatch:#396579">場地卡</span><span style="--swatch:#78642f">餽贈</span><small>行動、場地卡的陣營看卡上文字。</small></div></section>
+<p id="loading-status" role="status">正在載入卡牌……</p>
+<section class="comparison" id="card-detail" aria-label="卡牌正反面" hidden><section class="direction"><div class="direction-copy"><h2 id="face-title">正面 · 能力與數值</h2></div><div class="card-mount" id="interactive-card"></div><button class="flip-button" id="flip-card" aria-controls="interactive-card">翻到背面 ↻</button></section><section class="direction"><div class="direction-copy"><h2 id="back-title">背面 · 物種故事</h2></div><div class="card-mount" id="reverse-card"></div><p class="direction-note">森林綠卡框 · 共用島嶼標誌</p></section></section>
+<section id="rule-help" class="rule-help" aria-label="這張卡的能力詞彙"></section>
+<details class="story-sources" id="sources"><summary>故事資料來源</summary><div id="story-source"></div></details>
+<section class="catalog" id="catalog" aria-labelledby="catalog-title"><div class="catalog-heading"><h2 id="catalog-title">全套卡牌</h2><span>點選插畫，查看正反面</span></div><div id="catalog-grid" class="catalog-grid"></div></section>
+</main>
+<footer class="page-footer">獨立設計預覽，尚未套用正式遊戲。數值依目前遊戲資料；印刷尺寸與裁切版尚未定稿。<br>字體：<a href="https://justfont.com/huninn/">jf open 粉圓</a>。</footer>
+<script type="module" src="cards-all.js"></script></body></html>

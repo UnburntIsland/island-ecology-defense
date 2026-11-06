@@ -1,0 +1,11 @@
+/* Trigger remains in the heading; the full effect fits on one line. */
+.ability p{font-size:15px;white-space:nowrap;text-wrap:nowrap;letter-spacing:0}
+.story-sources{max-width:930px;margin:0 auto 18px;padding:0 24px;color:var(--card-ink);font-size:14px;line-height:1.65}
+.story-sources summary{cursor:pointer;width:fit-content;padding:10px 0;min-height:44px;font-size:15px}
+.story-sources summary:focus-visible{outline:3px solid #b88829;outline-offset:3px}
+.story-sources p{margin:8px 0;max-width:65ch}
+.story-sources ul{padding-left:22px;margin:10px 0}
+.story-sources a{color:var(--card-green);text-underline-offset:4px}
+.back-card .back-footer{font-size:10px}
+@media(max-width:760px) and (orientation:landscape){.ability p{font-size:14px}}
+@media(max-width:370px){.ability p{font-size:14px}}

@@ -1,0 +1,57 @@
+/* Existing collectible direction: preserve green, square artwork and game data. */
+:root{--card-ink:#19392d;--card-paper:#f3f5ec;--card-cream:#f4e7bd;--card-green:#41634b}
+.collectible{--ink:var(--card-ink);height:568px;min-height:568px;border-radius:23px;color:var(--card-ink)}
+.direction .collectible{box-shadow:none}
+.bold-card,.back-card{border-color:var(--card-ink);background:var(--card-ink)}
+.bold-card .illustration{border-radius:11px 11px 0 0}
+.bold-card .cost-badge{width:61px;height:69px;top:0;left:0;padding:0 4px 18px 0;gap:3px;border-radius:0 0 24px 0;background:var(--card-ink);color:var(--card-cream)}
+.bold-card .cost-badge b{font-size:40px;line-height:1}
+.bold-card .cost-badge .icon{width:14px;height:14px;margin-top:12px}
+.bold-card .cost-badge small{position:absolute;bottom:8px;left:0;width:52px;text-align:center;font-size:12px;line-height:1}
+.name-ribbon{flex:none;min-height:82px;padding:10px 12px;gap:8px}
+.name-ribbon:after{display:none}
+.name-ribbon h3{font-size:26px;letter-spacing:0;line-height:1.2;color:var(--card-paper)}
+.name-ribbon>div:first-child>span{font-size:12px;margin-top:6px;color:var(--card-paper)}
+.name-ribbon .combat-stats{padding:0;gap:6px}
+.combat-stats .stat,.combat-stats .stat:nth-child(2){width:49px;height:59px;display:grid;grid-template-columns:15px 1fr;grid-template-rows:34px 15px;column-gap:2px;row-gap:0;padding:4px 4px 2px;border:0;border-radius:12px;background:var(--card-paper);color:var(--card-ink)}
+.combat-stats .stat>.icon{position:static;width:15px;height:15px;padding:0;background:none;stroke-width:2;align-self:center}
+.combat-stats .stat b{font-size:30px;line-height:1;justify-self:center;font-weight:700}
+.combat-stats .stat small{position:static;grid-column:1/-1;font-size:11px;line-height:15px;color:var(--card-ink)}
+.bold-card>.ability{padding:13px 14px 12px;min-height:0;background:var(--card-paper)}
+.ability h4{font-size:13px;font-weight:700;color:var(--card-green);line-height:1.4}
+.ability p{font-size:16px;line-height:1.55;margin-top:5px;color:var(--card-ink);text-wrap:pretty}
+.card-footer,.back-card .back-footer{height:30px;color:var(--card-paper);font-size:11px}
+.card-footer>span:nth-child(2){color:var(--card-paper);letter-spacing:0}
+.card-footer>span:first-child{color:var(--card-cream)}
+.text-back .back-top{background:var(--card-green);border-radius:11px 11px 0 0;min-height:43px;color:var(--card-cream)}
+.text-back .back-top strong{font-size:22px;letter-spacing:.05em;line-height:1.4}
+.back-heading{border-top:0;border-bottom:0;padding:2px 20px 19px;color:var(--card-cream)}
+.island-mark{width:132px;height:110px;margin-bottom:9px}
+.back-heading h3{font-size:29px;line-height:1.3;margin-bottom:5px;letter-spacing:.02em;color:var(--card-paper)}
+.back-heading p{font-size:13px;line-height:1.4;color:var(--card-paper)}
+.text-back .back-reading{padding:19px 18px 17px;gap:17px;background:var(--card-paper)}
+.text-back .back-reading .story{font-size:19px;line-height:1.65;letter-spacing:0;color:var(--card-ink)}
+.text-back .back-reading .ecology-note{border:0;margin:0;padding:12px;background:#e3eadd;border-radius:10px;color:var(--card-ink)}
+.text-back .ecology-note h4{font-size:13px;line-height:1.4;margin-bottom:5px;color:var(--card-green)}
+.text-back .ecology-note p{font-size:13px;line-height:1.6;color:var(--card-ink)}
+.flip-button{background:var(--card-ink);border-color:var(--card-ink);border-radius:7px}
+.flip-button:active,.species-picker button:active{transform:translateY(1px)}
+@media(max-width:760px) and (orientation:landscape){
+ .collectible{height:540px;min-height:540px}
+ .name-ribbon{padding:10px;gap:6px}.name-ribbon h3{font-size:22px}
+ .combat-stats .stat,.combat-stats .stat:nth-child(2){width:45px}
+ .ability p{font-size:15px}
+ .island-mark{width:120px;height:100px}
+ .back-heading{padding:2px 15px 15px}.back-heading h3{font-size:27px}
+ .text-back .back-reading{padding:17px 15px;gap:14px}
+ .text-back .back-reading .story{font-size:18px}
+}
+@media(max-width:370px){
+ .collectible{height:560px;min-height:560px}
+ .name-ribbon{padding-inline:10px}.name-ribbon h3{font-size:22px}
+ .combat-stats .stat,.combat-stats .stat:nth-child(2){width:45px}
+ .text-back .back-reading{padding:17px 15px;gap:14px}
+ .text-back .back-reading .story{font-size:18px}
+}
+@media(max-width:600px) and (orientation:portrait){.page-header{flex-direction:column;gap:12px}.page-header h1{white-space:nowrap}.page-header p{max-width:32ch}.page-links{gap:18px}}
+@media(prefers-reduced-motion:reduce){.flip-button:active,.species-picker button:active{transform:none}}

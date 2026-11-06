@@ -1,0 +1,42 @@
+Scope: a collectible-card component, not a marketing page. Follow the skill's component exception: retain established composition, palette and Huninn type; no new draw, seed or assets. Card frames and numerical badges are game content. No decorative motion or extra images added to meet page-only quotas.
+
+Inventory: 淮德島; 台灣藍鵲; 台灣水韭; 石虎; original square paintings; costs 3/2/3; attack 2/1/3; life 2; native game effects; individual stories; shared island mark; children and self-cut printed gifts.
+Question: Can children identify the species and its game values quickly, then turn it over to read its story?
+Idea: The island's species illustration and shared island mark become the two sides of a forest-green keepsake.
+Content: preserve existing names, numbers, abilities, stories, ecological note and font license. No invented biology or collectibles numbering. All imagery is existing project artwork; no stock, generated replacement or new external asset.
+
+ROUND 1 — v9 before
+Seen in one second: blue magpie painting within a heavy card.
+Idea (one sentence): Original wildlife art framed as a forest-green collectible.
+Live thing: switch species and turn the left card over.
+Layout words by section: controls=toolbar / cards=paired faces.
+Scores: design 7.0 · usability 7.2 · creativity 6.7 · content 7.5 → overall 7.0
+Caps applied: component scope; page-only media and movement quotas not applicable. Existing requested card shadow recorded, not evidence of print quality.
+Top three problems (most visible first), each with the screenshot it shows in and the fix:
+1. renders-v9/desktop-p7.png: stat captions hang below the badges and icons overlap their edges. Integrate all three elements inside each badge.
+2. renders-v9/desktop-p7.png: ability text is small against the open reading panel. Increase it to 16px and retain comfortable wrapping.
+3. renders-v9/desktop-p7.png: white title band disconnects the back from the emblem. Join title and mark on the same green field and enlarge the mark.
+
+ROUND 2 — v10 final
+Seen in one second: intact wildlife painting, then a coherent green card reverse.
+Idea (one sentence): The island's species illustration and shared island mark become the two sides of a forest-green keepsake.
+Live thing: three species selectors and independent flip button, with previous version available by link.
+Layout words by section: controls=toolbar / cards=paired faces (stacked in portrait).
+Scores: design 7.8 · usability 7.8 · creativity 7.0 · content 7.5 → overall 7.6
+Caps applied: creativity capped at 7 for a familiar collectible layout; no new direction claimed. No shadows remain. Formal in-game or print usability not scored.
+Top three problems (most visible first), each with the screenshot it shows in and the fix:
+1. Initial portrait screenshot had a one-character title wrap. Fixed by stacking the preview header and links on portrait phones; final mobile-fold.jpg has a one-line title.
+2. Initial ability wrapping left +1 alone. Applied text-wrap:pretty; final desktop-fold.jpg retains a longer final phrase. Content unchanged.
+3. Original shadow read as floating. Removed it; final card identity comes from the deep-green frame. Inspector now 0 FAIL / 0 WARN.
+
+Remaining limits: footer and ecology text will need physical-size review; print size is unset. The comparison page scrolls and is not the battlefield layout. Logo remains a simple flat mark rather than a bespoke illustrated crest. No game logic, official source files, new rules, printing specifications or external publication changed.
+Final evidence: inspection-v10-final desktop/tablet/mobile fold and page sheets all viewed; renders-v10 covers four viewport sizes, three species, flip and flip-back.
+
+ROUND 3 — v11 content refinement
+Seen in one second: same forest-green paired collectible, now with a sourced ecology narrative.
+Idea (one sentence): Original wildlife art on the front and a short ecology story on the reverse invite children to learn about that species.
+Live thing: species selection, flip and expandable source links.
+Layout words by section: controls=toolbar / cards=paired faces / references=disclosure.
+Scores: design 7.8 · usability 7.8 · creativity 7.0 · content 8.2 → overall 7.7
+Caps applied: established component layout, no new art direction.
+Top three problems: original effect wrapped (fixed by moving trigger to heading); old stories described fictional game cooperation (replaced using official facts); missing source traceability (added institution credit and expandable links). Final inspection-v11 fold/page sheets viewed at all three widths. No additional visible layout problem requiring a new round. Print reading size remains unverified.

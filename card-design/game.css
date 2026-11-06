@@ -1,0 +1,36 @@
+body,button,input,select,textarea{font-family:Huninn,'Microsoft JhengHei',sans-serif}
+#gameScreen.v39 .ec-card{font-family:Huninn,'Microsoft JhengHei',sans-serif!important}
+#gameScreen.v39 #v27Cards .shop-card,#gameScreen.v39 #v27Cards .v38-hand-face{min-height:0!important;display:flex!important;flex-direction:column!important;flex:1!important;align-items:stretch!important}
+#gameScreen.v39 #v27Cards .ec-mini{flex:1;min-height:0}
+#gameScreen.v39 #v27Arena .unit-card,#gameScreen.v39 #v27Arena #rosterPanel .unit-card,#gameScreen.v39 #combatView .unit-card{display:block!important;padding:0!important;width:100%!important;height:100%!important;min-height:0!important;position:relative}
+#gameScreen.v39 #v27Arena .unit-card>.ec-mini{height:100%!important}
+#gameScreen.v39 #v27Arena .unit-card .ec-mini .ec-name h3{font-size:13px}
+#gameScreen.v39 #v27EnemySlots .v27-preview-card{padding:0!important;display:block!important;width:100%;height:100%}
+.support-card island-card{aspect-ratio:63/88}
+#cardViewer .viewer-dialog,#cardViewer:has(#v24Guide) .viewer-dialog{width:min(440px,calc((100dvh - 110px)*.716),calc(100vw - 24px))!important;height:min(700px,calc(100dvh - 24px))!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:44px minmax(0,1fr)!important}
+#v44Reader{display:none;font-family:Huninn,'Microsoft JhengHei',sans-serif;line-height:1.6;color:#19392d;text-align:left}
+#v44Reader h3{font-size:25px;margin:0 0 3px}#v44Reader p{font-size:18px;margin:12px 0}#v44Reader .v44-reader-kind{font-size:13px;margin:0 0 18px;color:#536458}#v44Reader .v44-keyword{font-size:14px}
+#cardViewer #viewerFaceLabel{color:#19392d!important}
+@media(orientation:landscape) and (max-height:600px){
+ #cardViewer .viewer-dialog,#cardViewer:has(#v24Guide) .viewer-dialog{width:min(740px,calc(100vw - 24px))!important;height:calc(100dvh - 20px)!important;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)!important;grid-template-rows:44px minmax(0,1fr)!important;gap:6px 24px!important;padding:8px 16px!important}
+ #cardViewer .viewer-dialog>.viewer-toolbar,#cardViewer .viewer-dialog>.actions{grid-column:1/-1}
+ #cardViewer .viewer-dialog,#cardViewer:has(#v24Guide) .viewer-dialog{background:#f3f5ec!important;border-radius:12px!important;color:#19392d!important}
+ #cardViewer .viewer-dialog>.actions{grid-area:1 / 1 / 2 / 3!important;width:100%!important}
+ #cardViewer #largeCard{grid-row:2;grid-column:1;width:100%!important;height:100%!important;min-height:0!important}
+ #v44Reader{display:block;grid-row:2;grid-column:2;overflow:auto;min-height:0;padding:8px 4px}
+ #gameScreen.v39 #v27Arena .unit-card .ec-mini{border-width:3px;border-bottom:0;border-radius:6px}
+ #gameScreen.v39 #v27Arena .unit-card .ec-mini .ec-ribbon{padding:2px}
+ #gameScreen.v39 #v27Arena .unit-card .ec-mini .ec-name h3{font-size:11px}
+ #gameScreen.v39 #v27Arena .unit-card .ec-mini .ec-stats{gap:2px;margin-top:2px}
+ #gameScreen.v39 #v27Arena .unit-card .ec-mini .ec-stat{height:16px;min-width:20px;padding:1px 2px;gap:1px}
+ #gameScreen.v39 #v27Arena .unit-card .ec-mini .ec-stat b{font-size:12px}
+ #gameScreen.v39 #v27Arena .unit-card .ec-mini .ec-stat .icon{width:9px;height:9px}
+ #gameScreen.v39 #v27Arena .unit-card .ec-mini .ec-footer{height:13px;font-size:8px}
+}
+@media(orientation:landscape) and (max-height:600px) and (max-width:740px){
+ #gameScreen.v39 #v27Arena,#gameScreen.v39[data-v27-phase=deploy] #v27Arena{padding:6px!important}
+ #gameScreen.v39 #v27Cards .ec-mini .ec-ribbon{padding:3px}
+ #gameScreen.v39 #v27Cards .ec-mini .ec-stats{margin-top:2px}
+ #gameScreen.v39 #v27Cards .ec-mini .ec-stat{height:19px}
+ #gameScreen.v39 #v27Arena .unit-card .ec-mini .ec-name h3{letter-spacing:-.4px;white-space:nowrap}
+}

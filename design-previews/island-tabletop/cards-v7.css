@@ -1,0 +1,24 @@
+.bold-top{padding-left:71px;padding-right:0}
+.bold-top .series-name{flex:1;justify-content:center;text-align:center;font-size:26px;line-height:1.2;letter-spacing:.04em}
+.text-back .back-top{justify-content:center;padding:0}
+.text-back .back-top strong{font-size:26px;letter-spacing:.04em}
+.back-heading{background:var(--accent);color:#fff;padding:29px 20px 27px;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);text-align:center}
+.back-heading>span{font-size:13px;letter-spacing:.12em}
+.back-heading h3{font-size:34px;line-height:1.3;margin:10px 0 8px;letter-spacing:.02em}
+.back-heading p{font-size:15px;line-height:1.4}
+.text-back .back-reading{padding:25px 21px 19px;justify-content:space-between;gap:22px}
+.text-back .back-reading .story{font-size:21px;line-height:1.75;letter-spacing:.02em;color:#263a36}
+.text-back .back-reading .ecology-note{margin:0;border-top:2px solid var(--accent);padding-top:13px;color:#445951}
+.text-back .ecology-note h4{color:var(--accent);font-size:14px;line-height:1.4;margin-bottom:6px}
+.text-back .ecology-note p{font-size:14px;line-height:1.6}
+@media(max-width:760px) and (orientation:landscape){.back-heading{padding:24px 14px 22px}.back-heading h3{font-size:31px}.text-back .back-reading{padding:21px 17px 17px;gap:15px}.text-back .back-reading .story{font-size:20px;line-height:1.65}.text-back .ecology-note p{font-size:13px}}
+@media(max-width:370px){.back-heading{padding:24px 14px 22px}.back-heading h3{font-size:31px}.text-back .back-reading{padding:21px 17px 17px;gap:15px}.text-back .back-reading .story{font-size:20px;line-height:1.65}}
+.back-heading{padding:19px 20px 18px;background:#2c5a4d;color:#f4e7bd}
+.island-mark{display:block;width:120px;height:100px;margin:0 auto 11px;flex:none}
+.back-heading h3{font-size:30px;margin:0 0 6px;color:#fffdf1}
+.back-heading p{font-size:14px;color:#e3eddf}
+.text-back .back-reading{justify-content:flex-start;gap:18px;padding:20px 21px 18px}
+.text-back .back-reading .story{font-size:20px;line-height:1.7}
+.text-back .ecology-note{flex:none}
+@media(max-width:760px) and (orientation:landscape){.back-heading{padding:16px 14px}.island-mark{width:108px;height:90px;margin-bottom:8px}.back-heading h3{font-size:28px}.text-back .back-reading{padding:18px 17px;gap:16px}.text-back .back-reading .story{font-size:19px;line-height:1.65}}
+@media(max-width:370px){.back-heading{padding:16px 14px}.island-mark{width:108px;height:90px;margin-bottom:8px}.back-heading h3{font-size:28px}.text-back .back-reading{padding:18px 17px;gap:16px}.text-back .back-reading .story{font-size:19px;line-height:1.65}}

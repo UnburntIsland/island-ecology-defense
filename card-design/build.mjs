@@ -1,0 +1,14 @@
+import {readFileSync,writeFileSync} from 'node:fs';
+const read=p=>readFileSync(p,'utf8');
+const shapes=read('design-previews/island-tabletop/cards-all-shapes.js').replace('export const islandMark','const islandMark').replace('export {icon};','');
+const stories=read('design-previews/island-tabletop/cards-all-stories.js').replaceAll('export const','const');
+const license=read('design-previews/island-tabletop/assets/fonts/OFL.txt');
+const code=`/* Shared V44 card presentation. No game state or randomness. */\n/* Embedded Huninn font license:\n${license}\n*/\nconst CardDesignV44=(()=>{\n${shapes}\n${stories}\n${read('card-design/renderer.js')}\n})();`;
+writeFileSync('card-design/shared.js',code);
+const base=read('index.html').replace(/<style id="card-design-v44">[\s\S]*?<\/style>\n/,'').replace(/<script id="card-design-code-v44">[\s\S]*?<\/script>\n/,'');
+const css=read('card-design/card.css');
+const font=readFileSync('design-previews/island-tabletop/assets/fonts/jf-openhuninn-2.1.ttf').toString('base64');
+const global=`<style id="card-design-v44">@font-face{font-family:Huninn;src:url(data:font/ttf;base64,${font}) format('truetype');font-display:swap}\n${css}\n${read('card-design/game.css')}</style>`;
+const js=`<script id="card-design-code-v44">\n${code}\nconst CARD_STYLE_V44=${JSON.stringify(css)};\n${read('card-design/game.js')}\n</script>`;
+writeFileSync('index.html',base.replace('</head>',global+'\n</head>').replace('</body>',js+'\n</body>'));
+console.log('V44 embedded: shared card renderer, stories, font, adapters. Existing rules retained verbatim.');

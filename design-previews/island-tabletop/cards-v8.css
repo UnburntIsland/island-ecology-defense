@@ -1,0 +1,13 @@
+.collectible{height:556px;min-height:556px}
+.bold-card .illustration{position:relative;margin-top:9px;border-radius:9px 9px 0 0;overflow:hidden}
+.bold-card .illustration img{aspect-ratio:1;object-fit:contain}
+.bold-card .cost-badge{left:0;top:0;width:60px;height:55px;padding:0 4px 5px 0;border-radius:0 0 19px 0;gap:3px}
+.bold-card .cost-badge b{font-size:41px}
+.bold-card .cost-badge .icon{width:13px;height:13px;margin-top:20px}
+.back-heading{background:var(--accent);padding:16px 20px 15px}
+.island-mark{width:96px;height:80px;margin-bottom:8px}
+.back-heading h3{font-size:28px}
+.text-back .back-reading{padding:18px 21px;gap:16px}
+.text-back .back-reading .story{font-size:19px;line-height:1.65}
+@media(max-width:760px) and (orientation:landscape){.collectible{height:536px;min-height:536px}.back-heading{padding:14px}.island-mark{width:90px;height:75px}.text-back .back-reading{padding:17px;gap:14px}.text-back .back-reading .story{font-size:18px;line-height:1.65}}
+@media(max-width:370px){.collectible{height:550px;min-height:550px}.back-heading{padding:14px}.island-mark{width:90px;height:75px}.text-back .back-reading{padding:17px;gap:14px}.text-back .back-reading .story{font-size:18px;line-height:1.65}}

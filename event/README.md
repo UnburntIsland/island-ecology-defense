@@ -2,7 +2,7 @@
 
 更新：成績服務已部署並填入 `config.json`，已完成真實跨來源送分、原局別重送與排行榜讀取測試。測試局由 `HIDDEN_RUN_IDS` 排除，原資料仍留在私人表單供追查。以下建立步驟供未來重建使用。
 
-本機功能已實作，Google 服務與 GitHub Pages 必須完成下列設定才會連線。`config.json` 的 `endpoint` 預設為空，因此不會誤送測試資料。未設定時仍可遊玩、保存本機成績及開啟匿名回饋。
+Google 服務與 GitHub Pages 已完成連線。`config.json` 目前包含正式 endpoint；若未來清空此欄位，仍可遊玩、保存本機成績及開啟匿名回饋。測試程式會明確替換為隔離端點，避免誤送正式資料。
 
 ## 1. 建立成績專用 Google Form／Sheet
 
@@ -35,7 +35,7 @@ node scripts/sync-leaderboard.mjs
 
 ## 3. GitHub Pages 自動同步
 
-目前尚未替你提交、推送或改 GitHub 設定。
+2026-11-07 已提交並推送 f64e62f，儲存庫管理員已將 Pages 切換為 GitHub Actions；首次自訂部署成功。下列步驟保留供重建參考。
 
 1. 將本輪來源、建置後 `index.html`、初始 `leaderboard.json`、`event/`、`scripts/`、`tests/event-service.test.mjs` 及 `.github/workflows/pages.yml` 一起提交。先檢查所有既有未提交內容，不要使用 `git add .` 將 `.taste-skill/`、測試資料、交付檔或私人檔案一併加入。
 2. Repository → Settings → Pages → Build and deployment → Source 選 **GitHub Actions**。

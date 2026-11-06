@@ -25,7 +25,11 @@ function syncUsabilityV46(){
   labelButtonV46($('lockButton'),G.p.shopLocked?'解鎖':'鎖定');labelButtonV46($('v39DetailButton'),'戰局');
   for(const node of document.querySelectorAll('.v38-buy'))labelButtonV46(node,'購買');
   for(const node of document.querySelectorAll('#hand [data-v20-hand-index]')){
-   const c=G.p.hand[Number(node.dataset.v20HandIndex)];if(c)labelButtonV46(node.querySelector('.v38-play'),c.type==='unit'?'部署':c.type==='field'?'啟用':'施放');
+   const c=G.p.hand[Number(node.dataset.v20HandIndex)];if(c){
+    const button=node.querySelector('.v38-play'),full=c.type==='unit'&&G.p.board.length>=SLOTS;
+    labelButtonV46(button,full?'隊伍已滿':c.type==='unit'?'部署':c.type==='field'?'啟用':'施放');
+    button?.classList.toggle('v46-team-full',full);
+   }
   }
   const detail=$('v39DetailButton');if(detail&&detail.parentElement!==$('v27Controls'))$('v27Controls').insertBefore(detail,$('v27PhaseControls'));
   const scout=$('v45Scout');if(scout){

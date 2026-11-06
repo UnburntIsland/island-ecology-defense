@@ -1,4 +1,7 @@
 /* V46: interface only. Print cards and game rules remain unchanged. */
+#gameScreen.v39 #v27Cards .v38-play.v46-team-full{padding-inline:4px!important}
+#gameScreen.v39 #v27Cards .v38-play.v46-team-full svg,#gameScreen.v39 #v27Cards .v38-play.v46-team-full b{display:none!important}
+#gameScreen.v39 #v27Cards .v38-play.v46-team-full .v46-button-text{white-space:nowrap;font-size:14px}
 #gameScreen.v39 #v27Center,#gameScreen.v39[data-v27-phase=deploy] #v27Center{grid-template-rows:minmax(0,1fr) minmax(365px,50%)!important}
 #gameScreen.v39 #v27Arena{padding:8px 5% 26px!important}
 #menuScreen{overflow-x:clip!important}
